@@ -1,0 +1,38 @@
+.profile_main_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.profile_container{
+    display: inline-flex;
+    flex-direction: column;
+    margin-right: 1.5rem;
+}
+
+.title{
+    color:#fff;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.profile_image{
+    width: 9rem;
+    height: 9rem;
+    border-radius: 0.2rem;
+    font-family: 'Sans-sarif';
+}
+.main_title{
+    color:#fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+    margin-bottom: 1.2rem;
+}
