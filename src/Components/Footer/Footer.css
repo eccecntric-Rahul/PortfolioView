@@ -1,0 +1,23 @@
+.footer{
+    background-color: #000;
+    height: 60vh;
+    width: 100%;
+    color:var(--grey);
+    display: flex;
+    justify-content: center;
+}
+
+.footer_content_container{
+    width: 60vw;
+    height: 60vh;
+}
+
+.footer_row{
+    width: 20vw;
+    height: 60vh;
+}
+
+.footer_icon{
+    color:var(--white);
+    font-size:large;
+}
