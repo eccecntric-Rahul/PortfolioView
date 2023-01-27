@@ -28,7 +28,7 @@ const Navbar = () => {
         <NavLink to='/contact' className={({ isActive }) =>isActive ? `nav_button active_style` : 'nav_button'}>CONTACT</NavLink>
         </span>
         </div>
-        <div className="profile_container">
+        <div className="profile_container_small">
         <img src={selectedProfile && selectedProfile.image ?selectedProfile.image:profile} alt="profile" className="profile" />
         </div>
     </div>

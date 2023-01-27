@@ -30,7 +30,7 @@ justify-content: space-between;
 align-items: center;
 }
 
-.profile_container{
+.profile_container_small{
     display: flex;
     display: inline-block;
     align-items: center;
