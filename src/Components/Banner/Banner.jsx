@@ -19,11 +19,11 @@ const Banner = (props) => {
         }}>
             <div className='content_container'>
                 <h1 className="banner_title">{bannerData?.title}</h1>
-                <div>
-                    <button className='button_wide'><span style={{display:'flex',alignItems:'center'}}><FaLinkedin style={{marginRight:'5px'}}/> {buttonDesc?.button1}</span></button>
-                    <button className='button_wide'><span style={{display:'flex',alignItems:'center'}}><FaGithub style={{marginRight:'5px'}}/> {buttonDesc?.button2}</span></button>
-                </div>
                 <h1 className='description'>{bannerData?.description}</h1>
+                <div>
+                    <button className='button_wide_light'><span style={{display:'flex',alignItems:'center'}}><FaLinkedin style={{marginRight:'5px'}}/> {buttonDesc?.button1}</span></button>
+                    <button className='button_wide_dark'><span style={{display:'flex',alignItems:'center'}}><FaGithub style={{marginRight:'5px'}}/> {buttonDesc?.button2}</span></button>
+                </div>
             </div>
         <div className="fadebottom"></div>
         </header>
