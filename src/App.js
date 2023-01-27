@@ -11,7 +11,7 @@ import Footer from './Components/Footer/Footer';
 function App() {
   const location = useLocation();
   return (
-    <>
+    <div className='App'>
     {location?.pathname!=='/' && <Navbar />}
     <Routes>
       <Route path="/" element={<Entry />}/>
@@ -21,7 +21,7 @@ function App() {
       <Route path="contact" element={<Contact />}/>
     </Routes>
     {location?.pathname!=='/' && <Footer />}
-    </>
+    </div>
   );
 }
 

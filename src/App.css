@@ -10,4 +10,10 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 
