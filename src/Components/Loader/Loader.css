@@ -1,0 +1,66 @@
+@keyframes loadinganim {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  #wrapper {
+    background: #334;
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+    display: table;
+    width: 100%;
+  }
+  #wrapper #loading {
+    display: table-cell;
+    width: 100%;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    vertical-align: middle;
+    font-family: helvetica, sans-serif;
+  }
+  #wrapper #loading .bulletouter {
+    animation: loadinganim 1s infinite;
+    animation-timing-function: linear;
+    animation-direction: reverse;
+    width: 50px;
+    height: 50px;
+    background: var(--red);
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  #wrapper #loading .bulletouter .bulletinner {
+    position: relative;
+    left: -5px;
+    width: 45px;
+    height: 45px;
+    background: #334;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  #wrapper #loading .bulletouter .mask {
+    position: relative;
+    left: -5px;
+    top: -15px;
+    width: 50px;
+    height: 25px;
+    background: #334;
+    transform: rotate(45deg);
+  }
+  #wrapper #loading .bulletouter .dot {
+    position: relative;
+    left: 33px;
+    top: -32px;
+    width: 8px;
+    height: 8px;
+    background: var(--red);
+    border-radius: 50%;
+  }
+  #wrapper #loading p {
+    padding-top: 23px;
+  }
