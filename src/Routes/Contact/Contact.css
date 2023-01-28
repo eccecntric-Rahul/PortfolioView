@@ -1,0 +1,99 @@
+.contact_container{
+   min-height: 100vh;
+}
+
+.contact_header{
+    min-height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FAFAFA;
+}
+
+.contact_combine_container{
+    background-color: #FAFAFA;
+}
+
+.contact_content_container{
+    background-color: #FAFAFA;
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+    flex-wrap: nowrap;
+    margin-bottom: 0;
+}
+
+.contact_column{
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact_text_container{
+    margin-top: 0.3rem;
+    margin-bottom: 2vh;
+    text-align: initial;
+}
+
+.contact_text_link{
+    text-decoration: none;
+    color:var(--grey);
+}
+
+.with_icon_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap:10px;
+}
+
+.like_section{
+    margin-top: 0;
+    background-color:#fff;
+    min-height: 20vh;
+    width: 100vw;
+    padding-left: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.textInput{
+    width: 35vw;
+}
+
+.textInput:focus{
+    border: none;
+    outline: none;
+}
+
+.input-wrapper{
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.submit_button{
+    min-width:20vw ;
+    background-color:var(--red) ;
+    color:var(--white) ;
+    border: none;
+    border-radius: 2%;
+    text-align: center;
+    padding: 1.4rem 2rem;
+
+}
+
+.like_button_container{
+    display: flex;
+    width: 35vw;
+    font-size: 3rem;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.greenClr{
+    color:#32cd32;
+}
