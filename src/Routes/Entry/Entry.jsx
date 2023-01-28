@@ -4,6 +4,7 @@ import {useDispatch,useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import './Entry.css'
 import { actionCreator, SELECT_PROFILE } from '../../Action';
+import Loader from '../../Components/Loader/Loader'
 function Entry() {
     const dispatch=useDispatch();
     const navigate = useNavigate();
@@ -16,6 +17,8 @@ function Entry() {
         navigate('/home',{replace:true});
     }
   return (
+    <>
+    {profiles && profiles.length ?
     <div className="profile_main_container">
         <h1 className="main_title">Who's Watching?</h1>
         <div>
@@ -27,6 +30,10 @@ function Entry() {
         })}
         </div>
     </div>
+  :
+  <Loader />  
+  }
+    </>
   )
 }
 

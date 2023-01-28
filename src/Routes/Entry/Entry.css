@@ -28,7 +28,15 @@
     height: 9rem;
     border-radius: 0.2rem;
     font-family: 'Sans-sarif';
+    border: solid 2px transparent;
+
 }
+
+.profile_image:hover{
+    border: solid 2px var(--white);
+}
+
+
 .main_title{
     color:#fff;
     font-family: 'Roboto', sans-serif;
