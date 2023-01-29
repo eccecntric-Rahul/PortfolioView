@@ -71,8 +71,8 @@
 }
 
 .input-wrapper{
-    margin-bottom: 2rem;
-    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    margin-top: 2.5rem;
 }
 
 .submit_button{
@@ -83,7 +83,11 @@
     border-radius: 2%;
     text-align: center;
     padding: 1.4rem 2rem;
-
+    transition: all ease-in 0.5s;
+}
+.submit_button:hover{
+    transform: scale(1.01);
+    background-color: var(--maroon);
 }
 
 .like_button_container{
@@ -92,8 +96,28 @@
     font-size: 3rem;
     justify-content: space-between;
     margin: 1rem 0;
+    transition: all ease-in 5s;
+}
+
+.like_icon{
+    transition: all ease-in 0.5s;
+}
+
+.like_icon:hover{
+    transform: scale(1.02);
 }
 
 .greenClr{
     color:#32cd32;
+}
+
+.redClr{
+    color:var(--red)
+}
+
+.error{
+    color:var(--maroon);
+    display: block;
+    margin-bottom: 1rem;
+    margin-top: 0.2rem;
 }
