@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink,Link } from "react-router-dom";
 import './Navbar.css'
-import profile from '../../Assets/avatar-netflix.jpg'
-import {useSelector} from 'react-redux'
 import {FaRegBell,FaSearch,FaCaretDown} from 'react-icons/fa'
+import Menu from '../Menu/Menu';
 const Navbar = () => {
   const [show,setShow]=useState(false);
-  const selectedProfile=useSelector((state)=>(state?.selectedProfile))
 
   useEffect(()=>{
    window.addEventListener('scroll',()=>{
@@ -35,10 +33,7 @@ const Navbar = () => {
         <p >Children</p>
         </Link>
         <FaRegBell className="navbar_icon"/>
-        <span className="profile_and_down_container">
-        <img src={selectedProfile && selectedProfile.image ?selectedProfile.image:profile} alt="profile" className="profile" />
-        <FaCaretDown className="navbar_down"/>
-        </span>
+        <Menu />
         </div>
     </div>
   )

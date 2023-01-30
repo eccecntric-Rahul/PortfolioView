@@ -7,7 +7,7 @@
     }
   }
   #wrapper {
-    background: #334;
+    background: transparent;
     min-height: 100vh;
     color: white;
     text-align: center;
