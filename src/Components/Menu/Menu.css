@@ -7,7 +7,7 @@
     width: fit-content;
     position: relative;
     margin-right: 3rem;
-
+    cursor: pointer;
 }
 
 .navbar_down{
@@ -65,7 +65,7 @@
 
 .menu_up_icon{
     position: absolute;
-    top:-1.3rem;
+    top:-1.5rem;
     right: 1.2rem;
     font-size: 2rem;
     color:rgba(255, 255, 255, 0.9);
@@ -81,8 +81,87 @@
     font-size: 0.8rem;
     padding:1rem 0;
     font-weight: 300;
+    margin-top: 0.5rem;
 }
 
 .menu_button:hover{
     text-decoration: underline;
 }
+
+
+ /* Notification Menu  */
+
+ .noti_menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:0.5rem;
+    align-items: flex-end;
+    width: fit-content;
+    position: relative;
+    padding: 1rem 0;
+    cursor: pointer;
+}
+.noti_menu_up_icon{
+    position: absolute;
+    top:2.7rem;
+    right: -0.25rem;
+    font-size: 2rem;
+    color:rgba(255, 255, 255, 0.9);
+    display: none;
+}
+
+.noti_menu_list{
+    background-color: rgba(17,17,17,0.9);
+    width: 25rem;
+    min-height: 7rem;
+    height: 30rem;
+    display: none;
+    position: absolute;
+    top:4rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.4rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    border: rgb(60,60,60) solid 1px;
+    color:rgba(220,220,220,0.8);
+    overflow-y: scroll;
+}
+
+
+
+.noti_list_item{
+    width: 100%;
+    height: 5rem;
+    padding:0.2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:0.7rem;
+    border-bottom: rgb(60,60,60) solid 1px;
+}
+
+.noti_list_item:hover{
+    color:#fff;
+}
+
+.noti_list_image{
+    width: 7rem;
+    height: 4rem;
+    border-radius: 10%;
+}
+
+.noti_menu_title{
+    font-size: 0.9rem;
+}
+
+.noti_menu_time{
+    color:var(--grey);
+    font-size: 0.6rem;
+}
+
+.noti_menu:hover .noti_menu_list,.noti_menu:hover .noti_menu_up_icon{
+    display: block;
+}
+
+

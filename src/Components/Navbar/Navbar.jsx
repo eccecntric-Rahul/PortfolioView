@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink,Link } from "react-router-dom";
 import './Navbar.css'
-import {FaRegBell,FaSearch,FaCaretDown} from 'react-icons/fa'
+import {FaSearch} from 'react-icons/fa'
 import Menu from '../Menu/Menu';
+import NotificationMenu from '../Menu/NotificationMenu';
 const Navbar = () => {
   const [show,setShow]=useState(false);
 
@@ -30,9 +31,9 @@ const Navbar = () => {
         <div className="profile_container_small">
         <FaSearch className="navbar_icon"/>
         <Link to="/" className="text_children">
-        <p >Children</p>
+        <p>Children</p>
         </Link>
-        <FaRegBell className="navbar_icon"/>
+        <NotificationMenu />
         <Menu />
         </div>
     </div>
