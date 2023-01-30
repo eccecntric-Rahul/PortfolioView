@@ -9,7 +9,7 @@
     transition-timing-function: ease-in;
     transition:all 0.5s;
     background-color: rgba(17,17,17,0.3);
-
+    z-index: 100;
 }
 
 .navbar{
