@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink,Link } from "react-router-dom";
 import './Navbar.css'
-import {FaSearch} from 'react-icons/fa'
 import Menu from '../Menu/Menu';
 import NotificationMenu from '../Menu/NotificationMenu';
+import Search from '../Search/Search';
 const Navbar = () => {
   const [show,setShow]=useState(false);
 
@@ -29,7 +29,7 @@ const Navbar = () => {
         </span>
         </div>
         <div className="profile_container_small">
-        <FaSearch className="navbar_icon"/>
+        <Search />
         <Link to="/" className="text_children">
         <p>Children</p>
         </Link>
