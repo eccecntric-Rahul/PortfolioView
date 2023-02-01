@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { getProfile } from '../../GetMethods'
+import { getProfile } from '../../Methods'
 import {useDispatch,useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import './Entry.css'

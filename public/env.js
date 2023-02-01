@@ -63,5 +63,5 @@ window.env = {
   "npm_node_execpath": "/usr/local/bin/node",
   "npm_config_prefix": "/opt/homebrew",
   "COLORTERM": "truecolor",
-  "Server_Url": "https://portfolioserver-7bou.onrender.com"
+  "SERVER_URL": "https://portfolioserver-7bou.onrender.com"
 };

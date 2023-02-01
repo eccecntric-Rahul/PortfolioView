@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react'
-import {FaSearch} from 'react-icons/fa'
 import {InputText} from 'primereact/inputtext';
 import {Animated} from "react-animated-css";
 import './Search.css'

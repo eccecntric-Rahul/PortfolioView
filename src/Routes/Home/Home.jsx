@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Banner from '../../Components/Banner/Banner'
 import Row from '../../Components/Row/Row'
-import { getSkills } from '../../GetMethods'
+import { getSkills } from '../../Methods'
 import {useSelector,useDispatch} from 'react-redux'
 const Home = () => {
   const state = useSelector ((state)=>(state));

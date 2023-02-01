@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Card from '../Card';
 import './Row.css'
-import { FaAngleLeft,FaAngleRight } from "react-icons/fa";
 
 const Row = (props) => {
     const { title ,cards} = props;

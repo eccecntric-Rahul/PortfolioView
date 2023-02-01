@@ -3,10 +3,12 @@ import { FaLinkedinIn, FaGithub, FaRegThumbsUp, FaRegThumbsDown } from 'react-ic
 import { InputText} from "primereact/inputtext";
 import { Formik } from "formik";
 import * as Yup from 'yup';
-import axios from 'axios';
 import './Contact.css'
+import {useDispatch} from 'react-redux'
+import { postReview } from '../../Methods';
 const Contact = () => {
   const [likeState,setLikeState]=useState();
+  const dispatch=useDispatch()
   const initialValues={
     guestName:'',
     comment:'',
@@ -28,7 +30,7 @@ const Contact = () => {
     formData.append('comment',values.comment);
     formData.append('like',likeState);
     try{
-      const resp = await axios.post('/review',formData);
+      dispatch(postReview(formData))
     }catch(err){
       console.log(err)
     }

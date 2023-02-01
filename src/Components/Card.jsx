@@ -5,12 +5,12 @@ const Card = (props) => {
   return (
     <div className='card_container' onMouseEnter={()=>{setVisible(true)}} onMouseLeave={()=>{setVisible(false)}}>
     {visible ? <div className="card" >
-    <img src={card.image} className='card_image' />
+    <img src={card.image} className='card_image' alt={title+'_'+index} />
     <p className='name' >{title}</p>
     </div>
     :
     <div className="card" >
-    <img src={card.image} className="card_image" />
+    <img src={card.image} className="card_image" alt={title+'_'+index} />
     </div>
     }
     </div>
