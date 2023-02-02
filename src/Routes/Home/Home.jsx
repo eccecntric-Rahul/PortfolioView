@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Banner from '../../Components/Banner/Banner'
 import Row from '../../Components/Row/Row'
-import { getSkills } from '../../Methods'
+import { getExperience, getSkills, getTraining } from '../../Methods'
 import {useSelector,useDispatch} from 'react-redux'
 import './Home.css'
 const Home = () => {
@@ -9,6 +9,8 @@ const Home = () => {
   const dispatch = useDispatch();
     useEffect (()=>{
       dispatch(getSkills())
+      dispatch(getTraining())
+      dispatch(getExperience())
     },[])
     
   return (
@@ -16,6 +18,7 @@ const Home = () => {
       <Banner />
       <div className="container">
       <Row title={'Skills'} cards={state?.skills}/>
+      <Row title={'Experience & Trainings'} cards={state?.skills}/>
       </div>
     </>
   )

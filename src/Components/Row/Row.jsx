@@ -6,7 +6,7 @@ import './Row.css'
 const Row = (props) => {
     const { title ,cards} = props;
     const scrollRef=useRef(null);
-    const [scrollOffset,setScrollOffset]=useState()
+    const [scrollOffset,setScrollOffset]=useState(0)
     const scrollPrev=()=>{
         if(scrollRef && scrollRef.current)
         scrollRef.current.scrollLeft -= 200
@@ -30,7 +30,7 @@ const Row = (props) => {
                 <Arrow type="right" onClick={() => scrollNext()} />
                 </div>
             <div className="card_section"  ref={scrollRef} onScroll={handleScroll}>
-                {cards?.map((card, index) => (
+                {cards?.sort((a,b)=>a.orderId-b.orderId)?.map((card, index) => (
                     <Card
                     title={card.name}
                     key={card.name+index}

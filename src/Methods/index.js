@@ -32,6 +32,26 @@ export const getSkills = () => async (dispatch, state) => {
     }
 }
 
+export const getExperience = () => async (dispatch, state) => {
+    try {
+        const res = await commonGet('/api/experience');
+        dispatch({ type: FETCHDATA_SUCCESS, payload: { experience: res?.data } });
+    } catch (err) {
+        console.log(err)
+        dispatch({ type: FETCHDATA_FAILURE, payload: { experience: [] } })
+    }
+}
+
+export const getTraining = () => async (dispatch, state) => {
+    try {
+        const res = await commonGet('/api/training');
+        dispatch({ type: FETCHDATA_SUCCESS, payload: { training: res?.data } });
+    } catch (err) {
+        console.log(err)
+        dispatch({ type: FETCHDATA_FAILURE, payload: { training: [] } })
+    }
+}
+
 export const getProfile = () => async (dispatch, state) => {
     try {
         const res = await commonGet('/api/profile');

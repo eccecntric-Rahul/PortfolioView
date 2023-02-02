@@ -38,21 +38,22 @@
     display: inline-flex;
     flex: 1 1 0px;
     flex-direction: column;
+    z-index: 0;
 }
 
-/* .card_section .card:focus, */
 .card_section .card:hover {
-    transform: scale(1.5);
+    transform: scale(1.25);
+    position: relative;
+    bottom: 3rem;
     z-index: 1;
 }
 
 .name {
-    text-align: center;
-    border-top: solid #000 0.1rem;
-    background-color: var(--black);
     color: #fff;
     margin: 0;
+    margin-bottom: 0.5rem;
     width: 100%;
+    font-size: 0.9rem;
 }
 
 .card_large {
@@ -72,7 +73,7 @@
 }
 
 .left_arrow_container{
-    height: 28vh;
+    height: 32vh;
     width: 3rem;
     background-color: rgba(17,17,17,0.9);
     position: absolute;
@@ -83,7 +84,7 @@
 }
 
 .right_arrow_container{
-    height: 28vh;
+    height: 32vh;
     width: 3rem;
     background-color: rgba(17,17,17,0.7);
     position: absolute;
@@ -110,3 +111,76 @@
     display: block;
 }
 
+.details_section{
+    min-height: 11vh;
+    border-top: solid #000 0.1rem;
+    background-color: rgb(20,20,20);
+    color: #fff;
+    margin: 0;
+    width: 100%;
+    padding:0.9rem 0.7rem 0.2rem 0.7rem;
+
+}
+
+.icon_outline{
+    padding:0.5rem;
+    border: rgba(240, 240, 240, 1) solid 2px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    margin-right: 0.8rem;
+}
+
+.details_icon_container{
+    margin-bottom:0.5rem;
+    padding-left: 0;
+}
+
+.like_outline{
+    background-color: var(--red);
+    border-radius: 10%;
+    padding:0.15rem 0.3rem;
+    font-size: smaller;
+    margin-right: 3px;
+    font-weight: 200!important;
+    font-family: "Roboto";
+}
+.like_container{
+    font-size: smaller;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.match_container
+{
+    color:var(--green);
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.quality{
+    font-size: 0.7rem;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.details_bullet{
+    color:var(--grey);
+}
+
+.combine_container{
+    margin-bottom: 0.5rem;
+}
+
+.category{
+    margin:0;
+    color:var(--white);
+    padding:0.1rem 0.3rem;
+    font-size: 0.7rem;
+    border: var(--grey) solid 1px;
+    width: fit-content;
+    text-align: center;
+    text-transform: capitalize;
+}
