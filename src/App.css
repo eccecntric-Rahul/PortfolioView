@@ -5,6 +5,8 @@
   --black: #221f1f;
   --grey:#808080;
   --green:#46d369;
+  --bgColor:#111;
+  --gold:#E5B21C;
 }
 body {
   background-color:#111;

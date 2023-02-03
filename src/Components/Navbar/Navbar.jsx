@@ -4,6 +4,7 @@ import './Navbar.css'
 import Menu from '../Menu/Menu';
 import NotificationMenu from '../Menu/NotificationMenu';
 import Search from '../Search/Search';
+import techRahul from '../../Assets/tech-rahul.jpg'
 const Navbar = () => {
   const [show,setShow]=useState(false);
 
@@ -20,6 +21,7 @@ const Navbar = () => {
   return (
     <div className={`nav ${show && 'nav_black'}`}>
         <div className="nav_container">
+        {/* <img src={techRahul} alt="tech-rahul"  className="nav_logo"/> */}
         <span className="nav_logo">TechRahul</span>
         <span className="navbar">
         <NavLink to='/home' className={({ isActive }) =>isActive ? `nav_button active_style` : 'nav_button'} >HOME</NavLink>

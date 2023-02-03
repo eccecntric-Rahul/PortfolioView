@@ -1,13 +1,13 @@
 .banner{
    color: #fff;
    object-fit: contain;
-   height: 68vh;
+   height: 90vh;
    width: 100%;
 }
 
 .content_container{
     margin-left:3rem;
-    padding-top:28vh;
+    padding-top:40vh;
     height: 190px;
 }
 
@@ -72,8 +72,8 @@
     transition: all 0.2s;
 }
 
-.fadeBottom{
-    height: 7.4rem;
-    background-image: linear-gradient(180deg,transparent,rgba(37,37,37,0.61),#111);
+.fade_bottom{
+    height: 50vh;
+    background-image: linear-gradient(180deg,transparent,rgba(255,255,255,0.1),#111);
 }
 

@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import './Banner.css'
 import { FaGithub,FaLinkedin } from "react-icons/fa";
 const Banner = (props) => {
-    const [bannerData, setBannerData] = useState ({
+    const [bannerData] = useState ({
         title: 'Rahul Kumar',
         image: "https://picsum.photos?random=1",
         description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem quibusdam itaque rem, voluptates quis tempore, amet quisquam commodi natus dolor consectetur incidunt. Facilis aliquam fugit soluta cum, doloremque excepturi velit?"
     });
-    const [buttonDesc, setButtonDesc] = useState({
+    const [buttonDesc] = useState({
         button1: 'Linked In',
         button2: "Github"
     })
@@ -25,7 +25,7 @@ const Banner = (props) => {
                     <button className='button_wide_dark'><span style={{display:'flex',alignItems:'center'}}><FaGithub style={{marginRight:'5px'}}/> {buttonDesc?.button2}</span></button>
                 </div>
             </div>
-        <div className="fadebottom"></div>
+        <div className="fade_bottom"></div>
         </header>
     )
 }

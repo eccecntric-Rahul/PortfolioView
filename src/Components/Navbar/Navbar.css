@@ -20,12 +20,14 @@ margin-left:0.5rem;
     color: var(--red);
     font-size: 1.5rem;
     font-weight: 800;
+    margin:0;
     margin-left:3rem;
+    /* width: 8rem;
+    height: 3rem; */
 }
 
 .nav_container{
-display: flex;
-display: inline-block;
+display: inline-flex;
 justify-content: space-between;
 align-items: center;
 }
