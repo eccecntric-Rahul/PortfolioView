@@ -24,8 +24,8 @@ const Menu = () => {
     <div className="menu_list">
         <FaCaretUp className="menu_up_icon"/>
         {profiles?.map((profile)=>{
-            return  <div className='list_item' key={profile?.name}>
-          <img src={profile?.image} alt={profile?.name} className="list_image" onClick={()=>{handleProfileClick(profile)}} />
+            return  <div className='list_item' key={profile?.name} onClick={()=>{handleProfileClick(profile)}}>
+          <img src={profile?.image} alt={profile?.name} className="list_image"  />
           <span className='menu_title'>{profile?.name}</span>
       </div> 
         })}
