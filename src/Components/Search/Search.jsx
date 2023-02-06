@@ -15,12 +15,12 @@ const Search = () => {
   return (
       <>
       <Animated animationIn="slideInRight" className="animation_container" animationOut="slideOutRight" animationInDuration={100} animationOutDuration={100} isVisible={show}>
-            <span  className="p-input-icon-left">
+            <span  className="p-input-icon-left" >
                 <i className="pi pi-search search_icon"  />
                 <InputText placeholder="Skills, Training, Experience" autoFocus onBlur={handleBlur} ref={searchRef} />
             </span>
     </Animated>
-            <span style={show?{display:'none'}:{display:'inline'}}  onClick={handleShow}>
+            <span style={show?{display:'none'}:{display:'inline',cursor:"pointer"}}  onClick={handleShow}>
             <i className="pi pi-search search_icon"  />
       </span>
 </>

@@ -19,7 +19,7 @@ const Home = () => {
       <Banner />
       <div className="container">
       <Row title={'Skills'} cards={state?.skills}/>
-      <Row title={'Experience & Trainings'} cards={state?.skills}/>
+      <Row title={'Experience & Trainings'} cards={[...state?.training,...state?.experience]}/>
       </div>
     </>
   )

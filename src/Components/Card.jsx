@@ -44,7 +44,7 @@ const Card = (props) => {
     <div className="modal_fade_bottom"></div>
     </div>
     <div className="modal_title_section">
-    <p className='modal_name'>{title}</p>
+    <p className='modal_name'>{title?.split(' ')?.[0]}</p>
     <div className="modal_icon_section">
     <button className='button_wide_light' onClick={()=>({})} style={{marginRight:"1.5rem",fontSize:'1.2rem'}}><span style={{display:'flex',alignItems:'center'}}><FaPlay style={{marginRight:'1rem'}}/> Play</span></button>
     <ModalIconContainer><FaHeart className="modal_details_icon"/></ModalIconContainer>
