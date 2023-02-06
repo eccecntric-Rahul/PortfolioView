@@ -63,6 +63,16 @@ export const getProfile = () => async (dispatch, state) => {
     }
 }
 
+export const getDetails = () => async (dispatch, state) => {
+    try {
+        const res = await commonGet('/api/details');
+        dispatch({ type: FETCHDATA_SUCCESS, payload: { details: res?.data } });
+    } catch (err) {
+        console.log(err)
+        dispatch({ type: FETCHDATA_FAILURE, payload: { details: [] } })
+    }
+}
+
 export const postReview = (body) => async (dispatch, state) => {
     try {
         const res = await commonPost('/api/review', body);

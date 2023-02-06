@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import Card from '../Card';
 import {BsChevronLeft,BsChevronRight} from 'react-icons/bs'
 import './Row.css'
-
+import Skeleton from 'react-skeleton-loader';
 const Row = (props) => {
     const { title ,cards} = props;
     const scrollRef=useRef(null);
@@ -30,14 +30,23 @@ const Row = (props) => {
                 <Arrow type="right" onClick={() => scrollNext()} />
                 </div>
             <div className="card_section"  ref={scrollRef} onScroll={handleScroll}>
-                {cards?.sort((a,b)=>a.orderId-b.orderId)?.map((card, index) => (
+                {cards?.length? cards?.sort((a,b)=>a.orderId-b.orderId)?.map((card, index) => (
                     <Card
                     title={card.name}
                     key={card.name+index}
                     card={card}
                     index={index}
                     />
+                    ))
+                    :
+                    <>
+                     {[...Array(10)]?.map((card, index) => (
+                         <div className="card_skeleton">
+                             <Skeleton color="#212224"  width="18vw" height="16vh"/>
+                         </div>
                     ))}
+                    </>
+                     }
                   </div>
         </div>
     )

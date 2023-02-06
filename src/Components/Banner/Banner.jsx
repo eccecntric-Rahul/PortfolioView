@@ -1,28 +1,49 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import {useSelector} from 'react-redux'
 import './Banner.css'
 import { FaGithub,FaLinkedin } from "react-icons/fa";
 const Banner = (props) => {
-    const [bannerData] = useState ({
-        title: 'Rahul Kumar',
-        image: "https://picsum.photos?random=1",
-        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem quibusdam itaque rem, voluptates quis tempore, amet quisquam commodi natus dolor consectetur incidunt. Facilis aliquam fugit soluta cum, doloremque excepturi velit?"
+    const details = useSelector ((state)=>(state?.details?.[0]))
+    const [bannerData,setBannerData] = useState ({
+        title: details?.name || "Rahul Kumar",
+        image: details?.bannerImage?.[1],
+        description: details?.description
     });
+    useEffect(()=>{
+        setBannerData({
+            title: details?.name,
+            image: details?.bannerImage?.[4],
+            description: details?.description
+        })
+    },[details])
+
     const [buttonDesc] = useState({
         button1: 'Linked In',
         button2: "Github"
     })
+    const handleRedirectionClick=(type)=>{
+        switch(type){
+            case 'linkedIn': window.open('https://www.linkedin.com/in/rahul-kumar-821109187/','_blank')
+                            break;
+            case 'github':  window.open('https://github.com/eccecntric-Rahul','_blank')
+                            break;
+            default:  window.open('https://www.linkedin.com/in/rahul-kumar-821109187/','_blank')
+                    break;
+    }
+}
+    const {image}=bannerData
     return (
         <header className="banner" style={{
             backgroundSize: 'cover',
-            backgroundImage: `url("https://picsum.photos/800/1200?random=1")`,
+            backgroundImage: `url(${image})`,
             backgroundPosition: 'center center'
         }}>
             <div className='content_container'>
                 <h1 className="banner_title">{bannerData?.title}</h1>
                 <h1 className='description'>{bannerData?.description}</h1>
                 <div>
-                    <button className='button_wide_light'><span style={{display:'flex',alignItems:'center'}}><FaLinkedin style={{marginRight:'5px'}}/> {buttonDesc?.button1}</span></button>
-                    <button className='button_wide_dark'><span style={{display:'flex',alignItems:'center'}}><FaGithub style={{marginRight:'5px'}}/> {buttonDesc?.button2}</span></button>
+                    <button className='button_wide_light' onClick={()=>{handleRedirectionClick('linkedIn')}}><span style={{display:'flex',alignItems:'center'}}><FaLinkedin style={{marginRight:'5px'}}/> {buttonDesc?.button1}</span></button>
+                    <button className='button_wide_dark' onClick={()=>{handleRedirectionClick('github')}}><span style={{display:'flex',alignItems:'center'}}><FaGithub style={{marginRight:'5px'}}/> {buttonDesc?.button2}</span></button>
                 </div>
             </div>
         <div className="fade_bottom"></div>

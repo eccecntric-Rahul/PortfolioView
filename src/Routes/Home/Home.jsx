@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Banner from '../../Components/Banner/Banner'
 import Row from '../../Components/Row/Row'
-import { getExperience, getSkills, getTraining } from '../../Methods'
+import { getDetails, getExperience, getSkills, getTraining } from '../../Methods'
 import {useSelector,useDispatch} from 'react-redux'
 import './Home.css'
 const Home = () => {
@@ -11,6 +11,7 @@ const Home = () => {
       dispatch(getSkills())
       dispatch(getTraining())
       dispatch(getExperience())
+      dispatch(getDetails())
     },[])
     
   return (

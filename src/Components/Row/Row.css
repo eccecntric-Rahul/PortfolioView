@@ -330,3 +330,8 @@
     bottom:-2vh;
     width: 100%;
 }
+
+.card_skeleton{
+  margin-right: 0.8rem;
+  border-radius: 1%;
+}
