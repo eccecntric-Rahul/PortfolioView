@@ -3,7 +3,12 @@ import { rootReducer } from "./Reducer";
 import thunk from 'redux-thunk';
 import logger from 'redux-logger'
 
-const initialState={};
+const initialState={
+  skills:[],
+  training:[],
+  experience:[],
+  profile:[]
+};
 const store = configureStore({
     reducer:rootReducer,
     middleware: [thunk,logger],
