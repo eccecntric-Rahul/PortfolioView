@@ -3,11 +3,15 @@ import { rootReducer } from "./Reducer";
 import thunk from 'redux-thunk';
 import logger from 'redux-logger'
 
+
+const profile = localStorage.getItem('profile');
+const selectedProfile = localStorage.getItem('selectedProfile');
 const initialState={
   skills:[],
   training:[],
   experience:[],
-  profile:[]
+  selectedProfile:selectedProfile?JSON.parse(selectedProfile):undefined,
+  profile:profile?JSON.parse(profile):[],
 };
 const store = configureStore({
     reducer:rootReducer,

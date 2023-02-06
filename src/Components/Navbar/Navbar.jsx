@@ -22,7 +22,6 @@ const Navbar = () => {
     <div className={`nav ${show && 'nav_black'}`}>
         <div className="nav_container">
         <img src={techRahul} alt="tech-rahul"  className="nav_logo"/>
-        {/* <span className="nav_logo">TechRahul</span> */}
         <span className="navbar">
         <NavLink to='/home' className={({ isActive }) =>isActive ? `nav_button active_style` : 'nav_button'} >HOME</NavLink>
         <NavLink to='/about' className={({ isActive }) =>isActive ? `nav_button active_style` : 'nav_button'}>ABOUT</NavLink>

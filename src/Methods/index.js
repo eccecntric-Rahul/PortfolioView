@@ -55,6 +55,7 @@ export const getTraining = () => async (dispatch, state) => {
 export const getProfile = () => async (dispatch, state) => {
     try {
         const res = await commonGet('/api/profile');
+        localStorage.setItem('profile',JSON.stringify(res?.data))
         dispatch({ type: FETCHDATA_SUCCESS, payload: { profile: res?.data } });
     } catch (err) {
         console.log(err)
