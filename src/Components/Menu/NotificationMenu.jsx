@@ -5,7 +5,10 @@ const  NotificationMenu= () => {
     const notiData= [{imageSrc:'https://picsum.photos/800/1200?random=1',title:'Welcome !!',time:'Just now',type:'New Arrival'},{imageSrc:'https://picsum.photos/800/1200?random=1',title:'Welcome !!',time:'Just now',type:'New Arrival'},{imageSrc:'https://picsum.photos/800/1200?random=1',title:'Welcome !!',time:'Just now',type:'New Arrival'},{imageSrc:'https://picsum.photos/800/1200?random=1',title:'Welcome !!',time:'Just now',type:'New Arrival'},{imageSrc:'https://picsum.photos/800/1200?random=1',title:'Welcome !!',time:'Just now',type:'New Arrival'},{imageSrc:'https://picsum.photos/800/1200?random=1',title:'Welcome !!',time:'Just now',type:'New Arrival'}]
   return (
     <div className="noti_menu">
-    <FaRegBell className="navbar_icon"/>
+    <span className="noti_icon_contianer navbar_icon">
+    <FaRegBell className=""/>
+      <span className="noti_badge">{notiData?.length}</span>
+      </span>  
     <FaCaretUp className="noti_menu_up_icon"/>
     <div className="noti_menu_list">
     {notiData?.map((noti)=>{

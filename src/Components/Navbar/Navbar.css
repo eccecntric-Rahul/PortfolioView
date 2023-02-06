@@ -80,8 +80,9 @@ align-items: center;
 }
 
 .navbar_icon{
-    color:var(--white);
-    font-size: 1.4rem;
+    color:var(--white) !important;
+    font-size: 1.4rem !important;
+    margin-right: 0.5rem!important;
 }
 
 .navbar_down{

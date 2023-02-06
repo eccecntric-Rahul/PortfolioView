@@ -164,4 +164,18 @@
     display: block;
 }
 
+.noti_icon_contianer{
+    position: relative;
+}
+
+.noti_badge{
+    font-size:0.5rem;
+    padding:0.1rem 0.3rem 0.1rem 0.3rem ;
+    background-color:var(--maroon);
+    position: absolute;
+    border-radius: 50%;
+    color: #fff;
+    top: -3px;;
+    right: -2px;
+}
 
