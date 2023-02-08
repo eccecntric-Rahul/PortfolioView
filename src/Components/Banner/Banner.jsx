@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {useSelector} from 'react-redux'
 import './Banner.css'
-import { FaGithub,FaLinkedin } from "react-icons/fa";
+import { FaGithub,FaLinkedin ,FaWhatsapp} from "react-icons/fa";
 const Banner = (props) => {
     const details = useSelector ((state)=>(state?.details?.[0]))
     const [bannerData,setBannerData] = useState ({
@@ -45,9 +45,23 @@ const Banner = (props) => {
                     <button className='button_wide_light' onClick={()=>{handleRedirectionClick('linkedIn')}}><span style={{display:'flex',alignItems:'center'}}><FaLinkedin style={{marginRight:'5px'}}/> {buttonDesc?.button1}</span></button>
                     <button className='button_wide_dark' onClick={()=>{handleRedirectionClick('github')}}><span style={{display:'flex',alignItems:'center'}}><FaGithub style={{marginRight:'5px'}}/> {buttonDesc?.button2}</span></button>
                 </div>
+                <Strip />
             </div>
         <div className="fade_bottom"></div>
         </header>
+    )
+}
+
+const Strip =()=>{
+    const handleWhatsappClick=()=>{
+        window.open("https://wa.me/+919015709221/",'_blank')
+    }
+    return (
+        <>
+        <span className="strip" onClick={handleWhatsappClick}>
+        <FaWhatsapp className="whatsapp_icon"/> Ping Me
+        </span>
+        </>
     )
 }
 

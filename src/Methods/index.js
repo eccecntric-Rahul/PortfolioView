@@ -73,6 +73,36 @@ export const getDetails = () => async (dispatch, state) => {
     }
 }
 
+export const getEducation = () => async (dispatch, state) => {
+    try {
+        const res = await commonGet('/api/education');
+        dispatch({ type: FETCHDATA_SUCCESS, payload: { education: res?.data } });
+    } catch (err) {
+        console.log(err)
+        dispatch({ type: FETCHDATA_FAILURE, payload: { education: [] } })
+    }
+}
+
+export const getProject = () => async (dispatch, state) => {
+    try {
+        const res = await commonGet('/api/project');
+        dispatch({ type: FETCHDATA_SUCCESS, payload: { project: res?.data } });
+    } catch (err) {
+        console.log(err)
+        dispatch({ type: FETCHDATA_FAILURE, payload: { project: [] } })
+    }
+}
+
+export const getPhotos = () => async (dispatch, state) => {
+    try {
+        const res = await commonGet('/api/photos');
+        dispatch({ type: FETCHDATA_SUCCESS, payload: { photos: res?.data } });
+    } catch (err) {
+        console.log(err)
+        dispatch({ type: FETCHDATA_FAILURE, payload: { photos: [] } })
+    }
+}
+
 export const postReview = (body) => async (dispatch, state) => {
     try {
         const res = await commonPost('/api/review', body);
