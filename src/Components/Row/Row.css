@@ -5,7 +5,7 @@
     position: relative;
 }
 
-.card_section {
+.card_section ,.photo_card_section{
     scroll-behavior: smooth;
     display: flex;
     overflow-x: scroll;
@@ -15,7 +15,7 @@
     margin-top: -100px;
 }
 
-.card_section::-webkit-scrollbar {
+.card_section::-webkit-scrollbar ,.photo_card_section::-webkit-scrollbar {
     display: none;
 }
 
@@ -183,8 +183,9 @@
     text-transform: capitalize;
 }
 
-.card_container {
+.card_container,.photo_card_container {
     cursor: pointer;
+    padding: 0;
 }
 
 /* modal style section  */
@@ -335,4 +336,51 @@
 .card_skeleton{
   margin-right: 0.8rem;
   border-radius: 1%;
+}
+
+/* Photos card style  */
+
+
+.photo_card_section .card:hover {
+    transform: scale(1.25);
+    z-index: 1;
+}
+
+.viewer_cross
+{
+    color: rgb(1,1,1);
+    background-color: #fff;
+    position:absolute;
+    top:2rem;
+    right:2rem;
+    padding:0.2rem ;
+    border-radius: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.photo_card_image{
+    margin:0;
+    width: 100%;
+    height: 10rem;
+}
+
+.photo_card {
+    transition: transform 450ms;
+    margin-right: 0.8rem;
+    background-color: #fff;
+    color: #000;
+    padding-bottom: 0;
+    align-items: center;
+    position: relative;
+    display: inline-flex;
+    flex: 1 1 0px;
+    flex-direction: column;
+    z-index: 0;
+    width: 8rem;
+    border-radius: 1%;
 }

@@ -27,10 +27,11 @@ const MyCarousel = (props) => {
   )
 }
 
-const ImageCard=(image)=>{
+const ImageCard=(card)=>{
     return (
-           <img src={image} alt="Image" className="image_card" />  
+           <img src={card} alt="Image" className="image_card" />  
         )
 }
 
 export default MyCarousel
+

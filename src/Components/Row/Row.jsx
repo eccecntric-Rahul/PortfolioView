@@ -4,7 +4,7 @@ import {BsChevronLeft,BsChevronRight} from 'react-icons/bs'
 import './Row.css'
 import Skeleton from 'react-skeleton-loader';
 const Row = (props) => {
-    const { title ,cards} = props;
+    const { title ,cards,onlyPhoto} = props;
     const scrollRef=useRef(null);
     const [scrollOffset,setScrollOffset]=useState(0)
     const scrollPrev=()=>{
@@ -29,13 +29,15 @@ const Row = (props) => {
                 <div className={scrollOffset>=0?"right_arrow_container show_right_arrow":"right_arrow_container"}>
                 <Arrow type="right" onClick={() => scrollNext()} />
                 </div>
-            <div className="card_section"  ref={scrollRef} onScroll={handleScroll}>
+            <div className={onlyPhoto?"photo_card_section":"card_section" } ref={scrollRef} onScroll={handleScroll}>
                 {cards?.length? cards?.sort((a,b)=>a.orderId-b.orderId)?.map((card, index) => (
                     <Card
                     title={card.name}
                     key={card.name+index}
                     card={card}
                     index={index}
+                    onlyPhoto={onlyPhoto}
+                    cards={cards}
                     />
                     ))
                     :
