@@ -1,0 +1,20 @@
+.search_route{
+    padding-top: 18vh;
+    padding-left: 3rem;
+    color: white;
+    min-height: 100vh;
+}
+
+.no_data_found{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+    font-size: x-small;
+    flex-direction: column;
+}
+
+.no_data_container{
+    width:fit-content;
+    padding-top: 7vh;
+}

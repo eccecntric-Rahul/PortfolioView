@@ -19,6 +19,7 @@ const initialState={
   project:[],
   selectedProfile:selectedProfile,
   profile:profile,
+  searchVal:''
 };
 const store = configureStore({
     reducer:rootReducer,

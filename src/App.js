@@ -10,6 +10,7 @@ import Footer from './Components/Footer/Footer';
 import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
 import "primereact/resources/primereact.min.css";                  //core css
 import "primeicons/primeicons.css";    
+import SearchRoute from './Routes/Search/SearchRoute';
 function App() {
   const location = useLocation();
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="resume" element={<Resume />}/>
       <Route path="about" element={<About />}/>
       <Route path="contact" element={<Contact />}/>
+      <Route path="search" element={<SearchRoute />}/>
     </Routes>
     {location?.pathname!=='/' && <Footer />}
     </div>
