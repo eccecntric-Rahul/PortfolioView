@@ -106,10 +106,11 @@ export const getPhotos = () => async (dispatch, state) => {
 export const postReview = (body) => async (dispatch, state) => {
     try {
         const res = await commonPost('/api/review', body);
-        if (res.status == 200)
-            dispatch({ type: POSTDATA_SUCCESS, payload: { reviewPosted: true } });
+        if (res.status == 200){
+            dispatch({ type: POSTDATA_SUCCESS, payload: { reviewPosted: true,reviewResp:res?.data } });
+            localStorage.setItem('reviewData',JSON.stringify({ reviewPosted: true,reviewResp:res?.data }));
+        }
         else{
-            
             dispatch({ type: POSTDATA_FAILURE, payload: { reviewPosted: false } })
         }
 

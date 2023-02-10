@@ -7,8 +7,10 @@ import { checkJson } from './Utility/Utility';
 
 let profile = localStorage.getItem('profile');
 let selectedProfile = localStorage.getItem('selectedProfile');
+let review =  localStorage.getItem('reviewData')
 selectedProfile=checkJson(selectedProfile)?JSON.parse(selectedProfile):undefined;
 profile=checkJson(profile)?JSON.parse(profile):[];
+review=checkJson(profile)?JSON.parse(profile):{};
 const initialState={
   skills:[],
   training:[],
@@ -19,7 +21,8 @@ const initialState={
   project:[],
   selectedProfile:selectedProfile,
   profile:profile,
-  searchVal:''
+  searchVal:'',
+  ...review
 };
 const store = configureStore({
     reducer:rootReducer,
