@@ -1,0 +1,27 @@
+.p-accordion-header-link{
+    border: #EAEAE5 solid 1px !important;
+    box-shadow: none !important;
+    border-radius: 4% !important;
+    padding-top: 0.7rem !important;
+    padding-bottom: 0.7rem !important;
+    width: 100%;
+    background-color: #fff!important;
+    color:#F2F2F2;
+}
+
+.p-accordion-toggle-icon{
+    color:var(--red)!important
+}
+
+.accordion_heading:hover{
+    color:var(--red)!important;
+}
+
+.accordion_heading_container{
+    display: flex;
+    align-items: center;
+}
+
+.p-accordion-header-link:hover .accordion_heading{
+    text-decoration: underline;
+}

@@ -3,6 +3,10 @@ import Carousel from '../../Components/Carousel/MyCarousel'
 import Row from '../../Components/Row/Row'
 import "./About.css"
 import { useSelector } from "react-redux"
+import MyAccordion from '../../Components/MyAccordion/MyAccordion'
+import { useNavigate } from 'react-router-dom';
+import FloatingMenu from '../../Components/FloatingMenu/FloatingMenu'
+
 const About = () => {
   const photos = useSelector((state) => (state?.photos))
   const imgArr = ["https://lh3.googleusercontent.com/JeWmvm7FtJxPblOjrx7LD-iO2IIFuogFAB8DQkVRz8Cs3DLx9QNoltgfB-GpY_BlrBlRuk3cETIiGv5W9Tx46wVYXvTB_8Yrxq5jdfLh3mp0fp8d6JNOHiuy5_AWVcCv1tjxtJX9-Q=w2400",
@@ -10,6 +14,7 @@ const About = () => {
     "https://lh3.googleusercontent.com/xNcd8d-lv7VYF1lffRMNiUYyd1YOsw3Asf869CfMcszwGi25bCkrwtNTghMKbjgvY7NaTWb9TXk5aR8UxrwXoQPrRgAX5grSxxynPAfO3bU6psvUvBSCokvz6gALBeszCYQA5rD6fg=w2400"
   ]
   const photosArr = photos?.filter((photo) => photo?.category === 'photos')
+  const navigate=useNavigate();
   return (
     <div className="about">
       <div className="carousel_section">
@@ -22,6 +27,18 @@ const About = () => {
       </div>
       <Row title={'My Photos'} cards={photosArr} onlyPhoto />
       <Row title={'Hobbies'} cards={[]} />
+      <div className="about_details_section">
+        <div className="about_col1">
+          <MyAccordion heading={'Wanna know thinking behind making this ?'} content={'I have several things to say but first i will '}/>
+        </div>
+        <div className="about_col2">
+          <FloatingMenu />
+        </div>
+      </div>
+      <div className="want_to_container">
+        <span>Want To Compliment ?</span>
+        <button className="grey_button" onClick={()=>navigate('/contact')}>LET'S GO</button>
+      </div>
     </div>
   )
 }

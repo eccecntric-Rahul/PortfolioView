@@ -1,14 +1,18 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { FaLinkedinIn, FaGithub, FaRegThumbsUp, FaRegThumbsDown } from 'react-icons/fa'
 import { InputText} from "primereact/inputtext";
 import { Formik } from "formik";
 import * as Yup from 'yup';
 import './Contact.css'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import { postReview } from '../../Methods';
+import { Toast } from 'primereact/toast';
+import profilePic from '../../Assets/rahul-circle.png'
 const Contact = () => {
   const [likeState,setLikeState]=useState();
+  const toast = useRef(null);
   const dispatch=useDispatch()
+  const state=useSelector((state)=>state);
   const initialValues={
     guestName:'',
     comment:'',
@@ -31,11 +35,16 @@ const Contact = () => {
     formData.append('like',likeState);
     try{
       dispatch(postReview(formData))
+      toast.current.show({ severity: 'success', summary: 'Success', detail: 'Review is posted ', sticky: true });
     }catch(err){
       console.log(err)
+      toast.current.show({ severity: 'error', summary: 'Error', detail: 'Error occured', sticky: true });
+
     }
    }else{
      console.log('Pls press the thumb button')
+     toast.current.show({ severity: 'error', summary: 'Error', detail: 'Pls press the thumb button', sticky: true });
+
    }
   }
   const handleLikeChange=(likeVal)=>{
@@ -44,6 +53,7 @@ const Contact = () => {
 
 
   return (
+    <>
     <Formik
       initialValues={initialValues}
       validationSchema={schema}
@@ -85,7 +95,18 @@ const Contact = () => {
           </div>
         </div>
         <div className="like_section">
-          <h3>Hey, there</h3>
+        {state?.reviewPosted?<>
+          <div className="profile_pic_section">
+          <img src={profilePic} alt="rahul-kumar-profile-pic" className="profile_pic" />
+          <div className="profile_pic_details">
+            <p className="profile_pic_text m-0">" Thank you so much for giving me your precious time ❤️  "</p>
+            <p className="text-right mt-2 mr-1"> - Rahul Kumar</p>
+          </div>
+          </div>
+        </>
+        :
+        <> 
+        <h3>Hey, there</h3>
           <p>If you like my website , so can you please like this and if you want you can send a compliment too !</p>
           <span className="p-float-label input-wrapper">
           <InputText id="guestName" type="text" name="guestName" className="p-inputtext-lg textInput" value={values.guestName}  onChange={handleChange} onBlur={handleBlur}/>
@@ -113,11 +134,14 @@ const Contact = () => {
           <span className={likeState===true ? 'greenClr':null}><FaRegThumbsUp className="like_icon"  onClick={()=>{handleLikeChange(true)}}/></span>
         </div>
           <button onClick={handleSubmit} className="submit_button"  disabled={!(dirty && isValid)}>Send</button>
+      </>}
         </div> 
       </div>
     </div>
         )}}
     </Formik>
+        <Toast ref={toast} />
+        </>
   )
 }
 

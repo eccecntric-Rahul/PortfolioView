@@ -84,6 +84,7 @@
     text-align: center;
     padding: 1.4rem 2rem;
     transition: all ease-in 0.5s;
+    cursor: pointer;
 }
 .submit_button:hover{
     transform: scale(1.01);
@@ -101,6 +102,7 @@
 
 .like_icon{
     transition: all ease-in 0.5s;
+    cursor: pointer;
 }
 
 .like_icon:hover{
@@ -130,4 +132,42 @@
 .p-inputtext:enabled:hover:active{
     border: var(--grey) solid 1px !important;
     box-shadow: none !important;
+}
+
+.p-toast-message{
+    background-color: rgba(17, 17, 17, 0.7)!important;
+}
+
+.p-toast-message-text{
+    color: #fff;
+}
+.p-toast-icon-close-icon{
+    color: #fff!important;
+}
+
+.p-toast{
+    top: 6rem !important;
+}
+
+.profile_pic{
+    margin-right: 2rem;
+}
+
+.profile_pic_section{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width:80vw;
+    padding: 2rem 0;
+}
+
+.profile_pic_details{
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile_pic_text{
+    font-style: italic;
+    font-size: 1.1rem;
 }

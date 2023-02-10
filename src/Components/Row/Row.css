@@ -384,3 +384,8 @@
     width: 8rem;
     border-radius: 1%;
 }
+
+.photo_card_section .photo_card:hover {
+    transform: scale(1.25);
+    z-index: 1;
+}
