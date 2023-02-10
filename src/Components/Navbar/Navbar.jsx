@@ -23,10 +23,10 @@ const Navbar = () => {
         <div className="nav_container">
         <NavLink to='/home'><img src={techRahul} alt="tech-rahul"  className="nav_logo"/></NavLink>
         <span className="navbar">
-        <NavLink to='/home' className={({ isActive }) =>isActive ? `nav_button active_style` : 'nav_button'} >HOME</NavLink>
-        <NavLink to='/about' className={({ isActive }) =>isActive ? `nav_button active_style` : 'nav_button'}>ABOUT</NavLink>
-        <NavLink to='/resume' className={({ isActive }) =>isActive ? `nav_button active_style` : 'nav_button'}>RESUME</NavLink>
-        <NavLink to='/contact' className={({ isActive }) =>isActive ? `nav_button active_style` : 'nav_button'}>CONTACT</NavLink>
+        <NavLink to='/home' className={({ isActive }) =>isActive ? `nav_button active_style` : 'nav_button'} >Home</NavLink>
+        <NavLink to='/about' className={({ isActive }) =>isActive ? `nav_button active_style` : 'nav_button'}>About</NavLink>
+        <NavLink to='/resume' className={({ isActive }) =>isActive ? `nav_button active_style` : 'nav_button'}>Resume</NavLink>
+        <NavLink to='/contact' className={({ isActive }) =>isActive ? `nav_button active_style` : 'nav_button'}>Contact</NavLink>
         </span>
         </div>
         <div className="profile_container_small">

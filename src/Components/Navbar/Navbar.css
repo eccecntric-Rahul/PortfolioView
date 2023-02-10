@@ -43,12 +43,12 @@ align-items: center;
 
 .nav_button{
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 0.85rem;
+    font-weight: 300;
     margin-left:10px;
     margin-right:10px;
     color: var(--white);
-    transition-timing-function: ease-in;
+    transition-timing-function: ease-in-out;
     transition:all 0.5s;
 }
 .text_children{
@@ -60,12 +60,12 @@ align-items: center;
     color: #fff;
 }
 .nav_button:hover{
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .active_style{
     color:#fff;
-    font-weight:700;
+    font-weight:410;
 }
 
 .nav_black{
