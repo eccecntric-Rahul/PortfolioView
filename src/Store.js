@@ -10,7 +10,7 @@ let selectedProfile = localStorage.getItem('selectedProfile');
 let review =  localStorage.getItem('reviewData')
 selectedProfile=checkJson(selectedProfile)?JSON.parse(selectedProfile):undefined;
 profile=checkJson(profile)?JSON.parse(profile):[];
-review=checkJson(profile)?JSON.parse(profile):{};
+review=checkJson(review)?JSON.parse(review):{};
 const initialState={
   skills:[],
   training:[],

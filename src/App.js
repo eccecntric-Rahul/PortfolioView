@@ -4,6 +4,7 @@ import Resume from './Routes/Resume/Resume';
 import About from './Routes/About/About';
 import Contact from './Routes/Contact/Contact';
 import Entry from './Routes/Entry/Entry';
+import NotFound from './Routes/NotFound/NotFound';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
@@ -18,6 +19,7 @@ function App() {
     {location?.pathname!=='/' && <Navbar />}
     <Routes>
       <Route path="/" element={<Entry />}/>
+      <Route path="*" element={<NotFound />}/>
       <Route path="home" element={<Home />}/>
       <Route path="resume" element={<Resume />}/>
       <Route path="about" element={<About />}/>
