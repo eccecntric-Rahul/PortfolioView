@@ -43,13 +43,21 @@ const Search = () => {
         dispatch({type:SEARCH_VALUE,payload:{searchVal}})
       }, [ searchVal], 800
     );
-    
+   const handleEmpty=()=>{
+    setSearchVal('')
+    navigate(prevRoute)
+    setShow(false)
+}
   return (
       <>
       <Animated animationIn="slideInRight" className="animation_container" animationOut="slideOutRight" animationInDuration={100} animationOutDuration={100} isVisible={show}>
+      <span className="p-input-icon-right">
+               {searchVal?.length ? <i className="pi  pi-times search_empty_icon" onClick={handleEmpty}/>:null}
             <span  className="p-input-icon-left" >
                 <i className="pi pi-search search_icon"  />
+               
                 <InputText placeholder="Skills, Training, Experience" onChange={(e)=>handleSearch(e)} value={searchVal} onInput={handleInput} autoFocus onBlur={handleBlur} ref={searchRef} />
+            </span>
             </span>
     </Animated>
             <span style={show?{display:'none'}:{display:'inline',cursor:"pointer"}}  onClick={handleShow}>

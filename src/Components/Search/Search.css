@@ -41,3 +41,9 @@
     margin-left: 0.2rem;
     font-size: larger!important;
 }
+
+.search_empty_icon{
+    z-index: 1000;
+    cursor: pointer;
+    color: #fff !important;;
+}
