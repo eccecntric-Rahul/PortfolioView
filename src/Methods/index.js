@@ -55,7 +55,7 @@ export const getTraining = () => async (dispatch, state) => {
 export const getProfile = () => async (dispatch, state) => {
     try {
         const res = await commonGet('/api/profile');
-        localStorage.setItem('profile',JSON.stringify(res?.data))
+        // localStorage.setItem('profile',JSON.stringify(res?.data))
         dispatch({ type: FETCHDATA_SUCCESS, payload: { profile: res?.data } });
     } catch (err) {
         console.log(err)
@@ -108,7 +108,7 @@ export const postReview = (body) => async (dispatch, state) => {
         const res = await commonPost('/api/review', body);
         if (res.status == 200){
             dispatch({ type: POSTDATA_SUCCESS, payload: { reviewPosted: true,reviewResp:res?.data } });
-            localStorage.setItem('reviewData',JSON.stringify({ reviewPosted: true,reviewResp:res?.data }));
+            // localStorage.setItem('reviewData',JSON.stringify({ reviewPosted: true,reviewResp:res?.data }));
         }
         else{
             dispatch({ type: POSTDATA_FAILURE, payload: { reviewPosted: false } })

@@ -29,7 +29,7 @@ window.env = {
   "npm_config_userconfig": "/Users/rahulkumar/.npmrc",
   "npm_config_init_module": "/Users/rahulkumar/.npm-init.js",
   "__CFBundleIdentifier": "com.microsoft.VSCode",
-  "npm_command": "run-script",
+  "npm_command": "start",
   "PWD": "/Users/rahulkumar/Documents/Portfolio/personalportfolio",
   "npm_lifecycle_event": "start",
   "EDITOR": "vi",
