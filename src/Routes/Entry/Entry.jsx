@@ -21,7 +21,7 @@ function Entry() {
     {profiles && profiles.length ?
     <div className="profile_main_container">
         <h1 className="main_title">Who's Watching?</h1>
-        <div>
+        <div className="profile_sub_container">
         {profiles?.map((profile)=>{
             return  <span className='profile_container' key={profile?.name}>
           <img src={profile?.image} alt={profile?.name} className="profile_image" onClick={()=>{handleProfileClick(profile)}} />

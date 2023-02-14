@@ -44,3 +44,25 @@
     font-size: 3rem;
     margin-bottom: 1.2rem;
 }
+
+@media screen and (max-width: 992px) {
+    .profile_sub_container {
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+     gap: 0.8rem;
+    }
+    .title{
+        font-size: 1rem;
+    }
+    .main_title{
+        font-size: 1.5rem;
+    }
+    .profile_image{
+        width: 5rem;
+        height: 5rem;
+    }
+    .profile_container{
+        margin-right: 0;
+    }
+  }
