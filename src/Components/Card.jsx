@@ -30,7 +30,7 @@ const Card = (props) => {
   }
 
   return (
-    <div key={index+'-card'}>
+    <>
       {onlyPhoto ?
         <div className="photo_card_container" key={'photo_card_' + index} onClick={() => handleImageClick()}>
           <div className="photo_card"  style={{ paddingTop: 0 }} >
@@ -39,10 +39,9 @@ const Card = (props) => {
         </div>
         :
         <div className='card_container' key={title+'-card'} >
-          <div className="combine_card_container">
-            <div className="card" onMouseEnter={() => { setVisible(true) }} onMouseLeave={() => { setVisible(false) }} style={card.bgColor ? { backgroundColor: card.bgColor } : {}} >
+            <div className="card"  style={card.bgColor ? { backgroundColor: card.bgColor } : {}} >
               <img src={card.image} className='card_image' alt={title + '_' + index} />
-              <div className={visible ? "details_section" : "details_section_none"} >
+              <div className={ "details_section"} >
                 <div className="details_icon_container">
                   <span><IconContainer><FaHeart className="details_icon" color={"var(--red)"} /></IconContainer>
                     <IconContainer><FaRegThumbsUp className="details_icon" /></IconContainer>
@@ -62,10 +61,9 @@ const Card = (props) => {
                 {card.liked && <p className="like_container"><span className="like_outline"><AiFillLike className="like_icon" /></span> Most liked</p>}
               </div>
             </div>
-            <div className="dummy_card" style={visible ? { backgroundColor: 'transparent', display: "block" } : { display: 'none' }} >
+            <div className="dummy_card" >
               <Skeleton className="skeleton_card_image" />
             </div>
-          </div>
         </div>
       }
       <WideModal modalVisible={modalVisible} key={index+"-card-modal"} setModalVisible={setModalVisible}>
@@ -143,7 +141,7 @@ const Card = (props) => {
           key={'imageViewer-'+ index}
         />
       )}
-    </div>
+    </>
   )
 }
 
