@@ -13,7 +13,11 @@
     margin-bottom: -500px;
     padding-top: 150px;
     margin-top: -150px;
+    margin-left: -100px;
+    padding-left: 100px;
 }
+
+
 
 .card_section::-webkit-scrollbar ,.photo_card_section::-webkit-scrollbar {
     display: none;
