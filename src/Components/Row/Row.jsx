@@ -19,7 +19,7 @@ const Row = (props) => {
         setScrollOffset(scrollRef?.current?.scrollLeft)
     }
     return (
-        <div className='row'>
+        <div className='row' key={title}>
             <h2>
                 {title}
             </h2>
@@ -33,7 +33,7 @@ const Row = (props) => {
                 {cards?.length? cards?.sort((a,b)=>a.orderId-b.orderId)?.map((card, index) => (
                     <Card
                     title={card.name}
-                    key={card.name+index}
+                    key={card?.name+index}
                     card={card}
                     index={index}
                     onlyPhoto={onlyPhoto}
@@ -43,7 +43,7 @@ const Row = (props) => {
                     :
                     <>
                      {[...Array(10)]?.map((card, index) => (
-                         <div className="card_skeleton">
+                         <div className="card_skeleton" key={'skeleton_card'+index}>
                              <Skeleton color="#212224"  width="18vw" height="16vh"/>
                          </div>
                     ))}
@@ -59,6 +59,7 @@ function Arrow (props){
     switch(type){
         case 'left': return <BsChevronLeft {...props}  className="left_arrow arrow"/>
         case 'right': return <BsChevronRight {...props} className="right_arrow arrow"/>
+        default: return <BsChevronLeft {...props}  className="left_arrow arrow"/>
     }
 }
 

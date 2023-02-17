@@ -11,8 +11,8 @@ const  NotificationMenu= () => {
       </span>  
     <FaCaretUp className="noti_menu_up_icon"/>
     <div className="noti_menu_list">
-    {notiData?.map((noti)=>{
-        return  <div className='noti_list_item' key={noti?.name}>
+    {notiData?.map((noti,index)=>{
+        return  <div className='noti_list_item' key={noti?.title+index}>
       <img src={noti?.imageSrc} alt={noti?.title} className="noti_list_image" />
       <div>
       <div className='noti_menu_title'>{noti?.type}</div>

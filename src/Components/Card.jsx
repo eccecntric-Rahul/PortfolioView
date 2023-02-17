@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
-import { FaHeart, FaRegThumbsUp, FaJsSquare, FaPlay, FaStar } from 'react-icons/fa'
+import { FaHeart, FaRegThumbsUp, FaJsSquare, FaPlay, FaStar, FaAngleDown } from 'react-icons/fa'
 import { AiFillLike } from 'react-icons/ai'
 import WideModal from './WideModal/WideModal';
 import ImageViewer from 'react-simple-image-viewer';
 import { RxCross2 } from "react-icons/rx"
+import Skeleton from 'react-skeleton-loader';
 const Card = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
   const { index, title, card, onlyPhoto, cards } = props;
   const [visible, setVisible] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
-  const images = cards.map(card=>card.image);
+  const images = cards.map(card => card.image);
   const handleImageClick = () => {
     setCurrentImage(index)
     setIsViewerOpen(true)
@@ -22,51 +23,52 @@ const Card = (props) => {
 
   const CrossComponent = () => {
     return (
-      <span className="viewer_cross">
+      <span className="viewer_cross" key={index+'-cross'}>
         <RxCross2 className="modal_cross_icon" />
       </span>
     )
   }
 
   return (
-    <>
+    <div key={index+'-card'}>
       {onlyPhoto ?
-        <div className="photo_card_container" onClick={() => handleImageClick()}>
-          <div className="photo_card" style={{paddingTop:0}} >
+        <div className="photo_card_container" key={'photo_card_' + index} onClick={() => handleImageClick()}>
+          <div className="photo_card"  style={{ paddingTop: 0 }} >
             <img src={card.image} className="photo_card_image" alt={'photo_card_' + index} />
           </div>
         </div>
         :
-        <div className='card_container' onMouseEnter={() => { setVisible(true) }} onMouseLeave={() => { setVisible(false) }} onClick={() => setModalVisible(true)}>
-          {visible ? <div className="card" style={card.bgColor ? { backgroundColor: card.bgColor } : {}} >
-            <img src={card.image} className='card_image' alt={title + '_' + index} />
-            <div className="details_section">
-              <div className="details_icon_container">
-                <IconContainer><FaHeart className="details_icon" /></IconContainer>
-                <IconContainer><FaRegThumbsUp className="details_icon" /></IconContainer>
-                <IconContainer><FaJsSquare className="details_icon" /></IconContainer>
+        <div className='card_container' key={title+'-card'} >
+          <div className="combine_card_container">
+            <div className="card" onMouseEnter={() => { setVisible(true) }} onMouseLeave={() => { setVisible(false) }} style={card.bgColor ? { backgroundColor: card.bgColor } : {}} >
+              <img src={card.image} className='card_image' alt={title + '_' + index} />
+              <div className={visible ? "details_section" : "details_section_none"} >
+                <div className="details_icon_container">
+                  <span><IconContainer><FaHeart className="details_icon" color={"var(--red)"} /></IconContainer>
+                    <IconContainer><FaRegThumbsUp className="details_icon" /></IconContainer>
+                    <IconContainer><FaJsSquare className="details_icon" /></IconContainer></span>
+                  <IconContainer marginRight={true}><FaAngleDown className="details_icon" /></IconContainer>
+                </div>
+                <p className='name' >"{title}"</p>
+                <div className="combine_container">
+                  {card.matched && <p className="match_container">{card.matched}% Loved</p>}
+                  {card.category && <p className="category">{card.category}</p>}
+                </div>
+                {card.quality && card.quality.length!==0 && <p className="quality">
+                  {card?.quality?.map((quality, index) => {
+                    return index === card.quality.length - 1 ? <span >{quality}</span> : <span >{quality} <span className="details_bullet">&bull;</span> </span>
+                  })}
+                </p>}
+                {card.liked && <p className="like_container"><span className="like_outline"><AiFillLike className="like_icon" /></span> Most liked</p>}
               </div>
-              <p className='name' >"{title}"</p>
-              <div className="combine_container">
-                {card.matched && <p className="match_container">{card.matched}% Loved</p>}
-                {card.category && <p className="category">{card.category}</p>}
-              </div>
-              {card.quality && card.quality.length && <p className="quality">
-                {card?.quality?.map((quality, index) => {
-                  return index === card.quality.length - 1 ? <span >{quality}</span> : <span >{quality} <span className="details_bullet">&bull;</span> </span>
-                })}
-              </p>}
-              {card.liked && <p className="like_container"><span className="like_outline"><AiFillLike className="like_icon" /></span> Most liked</p>}
+            </div>
+            <div className="dummy_card" style={visible ? { backgroundColor: 'transparent', display: "block" } : { display: 'none' }} >
+              <Skeleton className="skeleton_card_image" />
             </div>
           </div>
-            :
-            <div className="card" style={card.bgColor ? { backgroundColor: card.bgColor } : {}} >
-              <img src={card.image} className="card_image" alt={title + '_' + index} />
-            </div>
-          }
         </div>
       }
-      <WideModal modalVisible={modalVisible} setModalVisible={setModalVisible}>
+      <WideModal modalVisible={modalVisible} key={index+"-card-modal"} setModalVisible={setModalVisible}>
         <div className="modal_contianer">
           <div className="modal_image_section" style={card.bgColor ? { backgroundColor: card.bgColor } : {}}>
             <img src={card.image} className='modal_card_image' alt={title + '_' + index} />
@@ -137,23 +139,24 @@ const Card = (props) => {
           onClose={closeImageViewer}
           style={{ height: "100vh", width: "100vw", overflow: 'hidden' }}
           backgroundStyle={{ height: "100vh", width: "100vw", overflow: 'hidden', zIndex: 1000 }}
-          disableScroll={true}
           closeComponent={<CrossComponent />}
+          key={'imageViewer-'+ index}
         />
       )}
-    </>
+    </div>
   )
 }
 
-const IconContainer = ({ children }) => {
+const IconContainer = ({ children, marginRight }) => {
   return (
-    <span className="icon_outline">
+    <span className="icon_outline" style={marginRight ? { marginRight: 0 } : {}}>
       {children}
     </span>
   )
 }
 
 const ModalIconContainer = ({ children }) => {
+
   return (
     <span className="modal_icon_outline">
       {children}

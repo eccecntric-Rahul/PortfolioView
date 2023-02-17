@@ -16,7 +16,7 @@ const WideModal = (props) => {
     const { setModalVisible, modalVisible } = props;
     return (
         <div>
-            <Rodal visible={modalVisible} className="modal" customStyles={modalStyle} showCloseButton={false}>
+            <Rodal visible={modalVisible} onClose={()=>{}} className="modal" customStyles={modalStyle} showCloseButton={false}>
                 <span className="modal_cross">
                 <RxCross2 className="modal_cross_icon" onClick={()=>setModalVisible(false)}/>
                 </span>

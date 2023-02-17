@@ -25,6 +25,12 @@
     align-self: center;
     width: 90%;
 }
+.skeleton_card_image {
+    height: 16vh;
+    margin: 1vh 0;
+    align-self: center;
+    width: 90%;
+}
 
 .card {
     transition: transform 450ms;
@@ -42,12 +48,33 @@
     z-index: 0;
     border-radius: 1%;
 }
+.dummy_card {
+    transition: transform 450ms;
+    margin-right: 0.8rem;
+    padding-top: 0.2rem;
+    color: #000;
+    padding-bottom: 0;
+    width: 18vw;
+    align-items: center;
+    position: relative;
+    display: inline-flex;
+    flex: 1 1 0px;
+    flex-direction: column;
+    z-index: 0;
+    border-radius: 1%;
+}
+
+.combine_card_container{
+    background-color: transparent;
+    border-radius: 1%;
+}
 
 .card_section .card:hover {
     transform: scale(1.25);
-    position: relative;
-    bottom: 3rem;
+    position: absolute;
+    bottom: .3rem;
     z-index: 1;
+    border-radius: 1%;
 }
 
 .name {
@@ -61,6 +88,7 @@
 .card_large {
     max-height: 10rem;
     width: 8rem;
+    border-radius: 1%;
 }
 
 
@@ -109,6 +137,19 @@
     display: block;
 }
 
+.details_section_none {
+    min-height: 11vh;
+    border-top: solid #000 0.1rem;
+    background-color: rgb(20, 20, 20);
+    color: #fff;
+    margin: 0;
+    width: 100%;
+    padding: 0.9rem 0.7rem 0.2rem 0.7rem;
+    border-bottom-left-radius: 1.5%;
+    border-bottom-right-radius: 1.5%;
+    display: none;
+}
+
 .details_section {
     min-height: 11vh;
     border-top: solid #000 0.1rem;
@@ -117,23 +158,33 @@
     margin: 0;
     width: 100%;
     padding: 0.9rem 0.7rem 0.2rem 0.7rem;
-
+    border-bottom-left-radius: 1.5%;
+    border-bottom-right-radius: 1.5%;
 }
 
 .icon_outline {
     padding: 0.5rem;
-    border: rgba(240, 240, 240, 1) solid 2px;
+    border: var(--grey) solid 2px;
     border-radius: 50%;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
+    background-color: rgba(42,42,42,.6);;
     margin-right: 0.8rem;
+    color:rgba(255,255,255,0.85);
+    transition: all ease-in-out 450ms;
+}
+
+.icon_outline:hover {
+    border: rgba(255,255,255,0.95) solid 2px;
+    color:rgba(255,255,255,0.95);
 }
 
 .details_icon_container {
     margin-bottom: 0.5rem;
-    padding-left: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .like_outline {
@@ -181,6 +232,7 @@
     width: fit-content;
     text-align: center;
     text-transform: capitalize;
+    background-color: rgba(42,42,42,.6);
 }
 
 .card_container,.photo_card_container {
@@ -243,11 +295,11 @@
     width: fit-content;
     border-radius: 50%;
     margin-right: 1rem;
-    border: #fff solid 1px;
+    border: var(--grey) solid 1px;
 }
 
 .modal_details_icon {
-    color: #fff;
+    color: var(--grey);
 }
 
 .modal_loved{

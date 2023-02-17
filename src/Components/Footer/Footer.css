@@ -76,3 +76,35 @@
     color: var(--white);
     font-size: small;
 }
+
+@media screen and (max-width: 992px) {
+    .footer_content_container{
+        width: 90vw;
+    }
+    
+    .footer_row{
+        width: 30vw;
+    }
+    .footer_icon{
+        font-size: 1.2rem;
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+    .footer_content_container{
+        width: 99vw;
+    }
+    
+    .footer_row{
+        width: 33vw;
+    }
+    .footer_icon{
+        font-size: 1.2rem;
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+    
+  }
+
+  
