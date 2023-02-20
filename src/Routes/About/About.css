@@ -36,7 +36,7 @@
 
 .about_details_section{
     background-color: #fff;
-    height: 50vh;
+    min-height: 50vh;
     width: 100%;
     display: flex;
     justify-content: space-between;

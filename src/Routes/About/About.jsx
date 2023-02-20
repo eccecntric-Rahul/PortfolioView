@@ -29,10 +29,32 @@ const About = () => {
       <Row title={'Hobbies'} cards={[]} />
       <div className="about_details_section">
         <div className="about_col1">
-          <MyAccordion heading={'Wanna know thinking behind making this ?'} content={'I have several things to say but first i will '}/>
+          <MyAccordion heading={'Wanna know thinking behind making this ?'} content={<li>I wanted to showcase more about myself with some unique approach . I love netflix's ui alot . And the thing is every person loves watching netflix . So I thought why not choose the thing people love doing the most. And that is how this came to reality.</li>}/>
+          <MyAccordion heading={'Tech Stack for the app'} content={<div style={{marginBottom:"2rem"}}>
+            <h3 style={{color:"var(--red)"}}>Frontend :</h3> 
+            <ol>
+              <li>It is built using React.js.</li>
+              <li>The Ui library for the project is Prime React .</li>
+              </ol>
+             <h3 style={{color:"var(--red)"}}>Backend :</h3>
+             <ol>
+             <li>It is built using Node.js.</li>
+              <li>Nodemailer to send emails for the reviews.</li>
+              </ol>
+              </div>
+          }
+          />
+          <MyAccordion style={{marginBottom:"5rem"}}  heading={'Some key points about this app'} content={
+            <ol>
+              <li>This app shows all my skills, experience and qualities in the app.</li>
+              <li>You can Compliment me if you want by going to contact section.</li>
+              <li>Any compliment you post will be recieved by me on my email address.</li>
+              <li>You can search any skill,training ,education and experience in the search bar.</li>
+            </ol>
+          }/>
         </div>
         <div className="about_col2">
-          <FloatingMenu />
+          {/* <FloatingMenu /> */}
         </div>
       </div>
       <div className="want_to_container">
