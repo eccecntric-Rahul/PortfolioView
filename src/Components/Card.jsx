@@ -38,7 +38,7 @@ const Card = (props) => {
           </div>
         </div>
         :
-        <div className='card_container' key={title+'-card'} >
+        <div className='card_container' key={title+'-card'} onClick={()=>setModalVisible(true)}>
             <div className="card"  style={card.bgColor ? { backgroundColor: card.bgColor } : {}} >
               <img src={card.image} className='card_image' alt={title + '_' + index} />
               <div className={ "details_section"} >
@@ -76,7 +76,7 @@ const Card = (props) => {
             <p className='modal_name'>{title?.split(' ')?.[0]}</p>
             <div className="modal_icon_section">
               <button className='button_wide_light' onClick={() => ({})} style={{ marginRight: "1.5rem", fontSize: '1.2rem' }}><span style={{ display: 'flex', alignItems: 'center' }}><FaPlay style={{ marginRight: '1rem' }} /> Play</span></button>
-              <ModalIconContainer><FaHeart className="modal_details_icon" /></ModalIconContainer>
+              <ModalIconContainer><FaHeart color={"var(--red)"} className="modal_details_icon" /></ModalIconContainer>
               <ModalIconContainer><FaRegThumbsUp className="modal_details_icon" /></ModalIconContainer>
               <ModalIconContainer><FaJsSquare className="modal_details_icon" /></ModalIconContainer>
             </div>

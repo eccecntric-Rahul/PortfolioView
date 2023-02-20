@@ -20,7 +20,7 @@ const Row = (props) => {
     }
     return (
         <div className='row' key={title}>
-            <h2>
+            <h2 className="row_title">
                 {title}
             </h2>
                 <div  className={scrollOffset!==0?"left_arrow_container show_left_arrow":"left_arrow_container"}>
