@@ -29,3 +29,11 @@
     border: solid var(--white) 2px;
     color:var(--white)
 }
+
+    
+@media screen and (max-width: 580px) {
+    .resume{
+        width: 90vw;
+        height: 60vh;
+    }
+  }

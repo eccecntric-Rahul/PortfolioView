@@ -5,12 +5,15 @@ import WideModal from './WideModal/WideModal';
 import ImageViewer from 'react-simple-image-viewer';
 import { RxCross2 } from "react-icons/rx"
 import Skeleton from 'react-skeleton-loader';
+import { useMediaQuery } from 'react-responsive'
+import { useNavigate } from 'react-router';
 const Card = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
   const { index, title, card, onlyPhoto, cards } = props;
-  const [visible, setVisible] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
+  const isMobile = useMediaQuery({ query: '(max-width: 580px)' })
+  const navigate =useNavigate();
   const images = cards.map(card => card.image);
   const handleImageClick = () => {
     setCurrentImage(index)
@@ -20,7 +23,6 @@ const Card = (props) => {
     setCurrentImage(0)
     setIsViewerOpen(false);
   };
-
   const CrossComponent = () => {
     return (
       <span className="viewer_cross" key={index+'-cross'}>
@@ -28,7 +30,14 @@ const Card = (props) => {
       </span>
     )
   }
-
+  const handleCardClick=()=>{
+    if(isMobile){
+    navigate('/detail',{state:{...props}})
+    }
+    else{
+      setModalVisible(true);
+    }
+  }
   return (
     <>
       {onlyPhoto ?
@@ -38,8 +47,8 @@ const Card = (props) => {
           </div>
         </div>
         :
-        <div className='card_container' key={title+'-card'} onClick={()=>setModalVisible(true)}>
-            <div className="card"  style={card.bgColor ? { backgroundColor: card.bgColor } : {}} >
+        <div className='card_container' key={title+'-card'} >
+            <div className="card"  style={card.bgColor ? { backgroundColor: card.bgColor } : {}} onClick={()=>handleCardClick()}>
               <img src={card.image} className='card_image' alt={title + '_' + index} />
               <div className={ "details_section"} >
                 <div className="details_icon_container">
@@ -67,7 +76,7 @@ const Card = (props) => {
         </div>
       }
       <WideModal modalVisible={modalVisible} key={index+"-card-modal"} setModalVisible={setModalVisible}>
-        <div className="modal_contianer">
+        <div className="modal_container">
           <div className="modal_image_section" style={card.bgColor ? { backgroundColor: card.bgColor } : {}}>
             <img src={card.image} className='modal_card_image' alt={title + '_' + index} />
             <div className="modal_fade_bottom"></div>
@@ -153,7 +162,7 @@ const IconContainer = ({ children, marginRight }) => {
   )
 }
 
-const ModalIconContainer = ({ children }) => {
+export const ModalIconContainer = ({ children }) => {
 
   return (
     <span className="modal_icon_outline">

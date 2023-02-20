@@ -6,7 +6,7 @@ import {RxCross2} from "react-icons/rx"
 const modalStyle={width: "60vw",
 minHeight: "100vh",
 borderRadius: "1%",
-marginTop: "4vh",
+marginTop: "10vh",
 backgroundColor:"rgb(20,20,20)",
 overflowY:"scroll",
 padding:0
