@@ -81,3 +81,24 @@
 .grey_button:hover{
     background-color: rgb(244,244,244);
 }
+
+@media screen and (max-width: 580px) {
+    .want_to_container{
+        font-size: 1.4rem;
+        padding:1.5rem 1rem;
+    }
+    .grey_button{
+        padding:0.45rem 0.8rem;
+        background-color: #fff;
+        cursor: pointer;
+        transition: all ease-in-out 450ms;
+    }
+   .about_col1{
+       width: 100%;
+       padding-left: 1rem;
+       padding-right: 1rem;
+   }
+   .about_col2{
+       display: none;
+   }
+  }

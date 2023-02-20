@@ -92,19 +92,18 @@
 
   @media screen and (max-width: 580px) {
     .footer_content_container{
-        width: 99vw;
+        width: 100vw;
+        padding-left: 1rem;
     }
-    
     .footer_row{
         width: 33vw;
     }
     .footer_icon{
         font-size: 1.2rem;
+        margin-right: 0.2rem;
     }
   }
 
-  @media screen and (max-width: 580px) {
-    
-  }
+
 
   
