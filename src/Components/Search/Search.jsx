@@ -6,7 +6,7 @@ import { useNavigate,useLocation } from 'react-router-dom';
 import useDebounce from '../../Hooks/useDebounce';
 import { useDispatch } from 'react-redux';
 import { SEARCH_VALUE } from '../../Action';
-const Search = () => {
+const Search = (props) => {
     const [show,setShow]=useState (false);
     const [searchVal,setSearchVal]=useState('');
     const searchRef=useRef(null);
@@ -14,6 +14,7 @@ const Search = () => {
     const location =useLocation();
     const [prevRoute,setPrevRoute]=useState(null);
     const dispatch=useDispatch();
+    const {onlySearchBar}=props;
     const handleShow =()=>{
         setShow(true);
         setTimeout(()=>searchRef.current.focus(),100);
@@ -46,9 +47,20 @@ const Search = () => {
    const handleEmpty=()=>{
     setSearchVal('')
     navigate(prevRoute)
-    setShow(false)
+    if(!onlySearchBar)setShow(false)
 }
   return (
+      onlySearchBar?
+      <div className="animation_container">
+       <span className="p-input-icon-right">
+       {searchVal?.length ? <i className="pi  pi-times search_empty_icon" onClick={handleEmpty}/>:null}
+    <span  className="p-input-icon-left" >
+        <i className="pi pi-search search_icon"  />
+        <InputText placeholder="Search" onChange={(e)=>handleSearch(e)} value={searchVal} onInput={handleInput} autoFocus ref={searchRef} />
+    </span>
+    </span>
+      </div>
+      :
       <>
       <Animated animationIn="slideInRight" className="animation_container" animationOut="slideOutRight" animationInDuration={100} animationOutDuration={100} isVisible={show}>
       <span className="p-input-icon-right">
@@ -63,7 +75,7 @@ const Search = () => {
             <span style={show?{display:'none'}:{display:'inline',cursor:"pointer"}}  onClick={handleShow}>
             <i className="pi pi-search search_icon"  />
       </span>
-</>
+      </>
   )
 }
 

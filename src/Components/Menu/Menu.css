@@ -179,3 +179,45 @@
     right: -2px;
 }
 
+
+/* compact menu styles */
+
+.compact_profile_container{
+    display: flex;
+    color:white;
+    margin-top: 2rem;
+    width: 100%;
+    gap:0.5rem;
+}
+
+.compact_image_section{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 25%;
+}
+
+.compact_name_section{
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-start;
+    width: 75%;
+    flex-direction: column;
+    gap:0.2rem
+}
+
+.compact_profile_name{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.compact_profile{
+    width: 3.3rem;
+    height: 3.3rem;
+    border-radius: 0.3rem;
+}
+.switch_account{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--grey);
+}

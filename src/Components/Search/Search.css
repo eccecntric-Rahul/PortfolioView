@@ -15,7 +15,6 @@
     padding-top: 8px !important;
     padding-bottom: 8px !important;
     color:var(--white);
-    width: 18rem;
 }
 
 .animation_container .p-inputtext{
@@ -47,3 +46,20 @@
     cursor: pointer;
     color: #fff !important;;
 }
+
+@media screen and (max-width: 580px) {
+    .animation_container{
+        margin-right: 1rem;
+    }
+    .animation_container .p-inputtext{
+        width: 12rem;
+    }
+    .pi-search{
+        margin-left: 0.1rem;
+        font-size: medium!important;
+    }
+    .search_empty_icon{
+        font-size: medium!important;
+    }
+
+   }
