@@ -23,6 +23,7 @@
     font-size: larger;
     flex-wrap: nowrap;
     margin-bottom: 0;
+    padding-bottom: 5rem;
 }
 
 .contact_column{
@@ -171,3 +172,38 @@
     font-style: italic;
     font-size: 1.1rem;
 }
+
+@media screen and (max-width: 580px) {
+   .profile_pic{
+       margin:0;
+   }
+   .like_section{
+       padding:1rem;
+   }
+   .profile_pic_section{
+        flex-direction: column;
+        width: 100vw;
+        padding:2rem 5vw;
+   }
+   .profile_pic_details{
+       justify-content: center;
+    }
+    .contact_column{
+        padding-right: 1.5rem;
+    }
+    .contact_content_container{
+        justify-content: center;
+    }
+    .contact_header{
+        min-height: 22vh;
+    }
+    .textInput{
+        width: 100%;
+    }
+    .like_button_container{
+        width: 100%;
+    }
+    .submit_button{
+        width: 100%;
+    }
+  }
