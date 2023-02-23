@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import './Navbar.css'
 import Menu from '../Menu/Menu';
 import NotificationMenu from '../Menu/NotificationMenu';
@@ -10,6 +10,7 @@ import { Sidebar } from 'primereact/sidebar';
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const [sidebarVisible, setSidebarVisible] = useState(false);
+  const navigate =useNavigate()
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.pageYOffset) {
@@ -43,9 +44,9 @@ const Navbar = () => {
         </span>
         <div className="profile_container_small">
           <Search />
-          <Link to="/" className="text_children">
+          <span className="text_children" onClick={()=>navigate('/',{state:{onlyProfiles:true}})}>
             <p>Children</p>
-          </Link>
+          </span>
           <NotificationMenu />
           <Menu />
         </div>

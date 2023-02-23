@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { getProfile } from '../../Methods'
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 import './Entry.css'
 import { actionCreator, SELECT_PROFILE } from '../../Action';
 import Loader from '../../Components/Loader/Loader'
@@ -19,6 +19,7 @@ function Entry() {
   const profiles = useSelector((state) => (state?.profile));
   const [allowSound, setAllowSound] = useState(false);
   const [allowPageLoad, setAllowPageLoad] = useState(false);
+  const location = useLocation();
   const [play] = useSound(entryTone, {
     soundEnabled: true,
     volume: 1,
@@ -32,7 +33,7 @@ function Entry() {
     setAllowSound(false);
   }
   useEffect(() => {
-    confirmDialog({
+     !location?.state?.onlyProfiles && confirmDialog({
       message: 'Are you ok with playing sound ? Press Yes or No to continue..',
       header: '',
       icon: 'pi pi-info-circle',
@@ -61,7 +62,24 @@ function Entry() {
   return (
     <>
 
-      {allowPageLoad ?
+      {
+      location && location.state && location.state.onlyProfiles?
+      profiles && profiles.length ?
+            <Animated className="profile_main_container">
+              <h1 className="main_title">Who's Watching?</h1>
+              <div className="profile_sub_container">
+                {profiles?.map((profile) => {
+                  return <span className='profile_container' key={profile?.name}>
+                    <img src={profile?.image} alt={profile?.name} className="profile_image" onClick={() => { handleProfileClick(profile) }} />
+                    <span className='title'>{profile?.name}</span>
+                  </span>
+                })}
+              </div>
+            </Animated>
+            :
+            <Loader />
+            :
+      allowPageLoad ?
         loading ? <Animation />
           :
           profiles && profiles.length ?
