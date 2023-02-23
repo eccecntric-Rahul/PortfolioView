@@ -11,6 +11,7 @@ import entryTone from '../../Assets/mp3/entryTone.mp3'
 import rLogo from '../../Assets/r-logo.jpg'
 import { ConfirmDialog } from 'primereact/confirmdialog';
 import { confirmDialog } from 'primereact/confirmdialog';
+import { Animated } from 'react-animated-css';
 function Entry() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -32,10 +33,10 @@ function Entry() {
   }
   useEffect(() => {
     confirmDialog({
-      message: 'Are you ok with playing sound in the background ?',
-      header: 'Confirmation',
+      message: 'Are you ok with playing sound ? Press Yes or No to continue..',
+      header: '',
       icon: 'pi pi-info-circle',
-      position: 'top-right',
+      position: 'center',
       accept,
       reject,
     });
@@ -64,7 +65,7 @@ function Entry() {
         loading ? <Animation />
           :
           profiles && profiles.length ?
-            <div className="profile_main_container">
+            <Animated className="profile_main_container">
               <h1 className="main_title">Who's Watching?</h1>
               <div className="profile_sub_container">
                 {profiles?.map((profile) => {
@@ -74,7 +75,7 @@ function Entry() {
                   </span>
                 })}
               </div>
-            </div>
+            </Animated>
             :
             <Loader />
         :

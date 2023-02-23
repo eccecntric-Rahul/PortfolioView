@@ -95,6 +95,9 @@
 .p-dialog-content {
     padding: 0.5rem 0.5rem !important;
 }
+.p-confirm-dialog-icon{
+    font-size: 1.67rem!important;
+}
 
 @media screen and (max-width: 992px) {
     .profile_sub_container {
