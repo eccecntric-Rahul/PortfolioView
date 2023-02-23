@@ -78,8 +78,12 @@
 }
 
 @media screen and (max-width: 992px) {
+    .footer{
+        height: 50vh;
+    }
     .footer_content_container{
         width: 90vw;
+        height: 50vh;
     }
     
     .footer_row{
@@ -91,9 +95,22 @@
   }
 
   @media screen and (max-width: 580px) {
+    .footer{
+        height: 50vh;
+        width: 100%;
+        color:var(--grey);
+        display: flex;
+        justify-content: center;
+        margin-top: 10vh;
+        padding: 8px;
+        position: relative;
+        font-size: large;
+    }
+    
     .footer_content_container{
         width: 100vw;
         padding-left: 1rem;
+        height: 50vh;
     }
     .footer_row{
         width: 33vw;
@@ -102,6 +119,7 @@
         font-size: 1.2rem;
         margin-right: 0.2rem;
     }
+    
   }
 
 

@@ -46,13 +46,12 @@
     cursor: pointer;
     color: #fff !important;;
 }
-
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 768px) {
     .animation_container{
         margin-right: 1rem;
     }
     .animation_container .p-inputtext{
-        width: 12rem;
+        width: 30vw;
     }
     .pi-search{
         margin-left: 0.1rem;
@@ -61,5 +60,30 @@
     .search_empty_icon{
         font-size: medium!important;
     }
+
+   }
+@media screen and (max-width: 580px) {
+    .animation_container{
+        margin-right: 1rem;
+    }
+    .animation_container .p-inputtext{
+        width: 30vw;
+    }
+    .pi-search{
+        margin-left: 0.1rem;
+        font-size: medium!important;
+    }
+    .search_empty_icon{
+        font-size: medium!important;
+    }
+
+   }
+
+   @media screen and (max-width: 340px) {
+   
+    .animation_container .p-inputtext{
+        width: 35vw;
+    }
+   
 
    }

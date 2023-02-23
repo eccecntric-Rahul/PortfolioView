@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import {useSelector} from 'react-redux'
 import './Banner.css'
 import { FaGithub,FaLinkedin ,FaWhatsapp} from "react-icons/fa";
+import { useMediaQuery } from 'react-responsive';
 const Banner = (props) => {
     const details = useSelector ((state)=>(state?.details?.[0]))
-    const [bannerData,setBannerData] = useState ({
+  const isMobileOrTab = useMediaQuery({ query: '(max-width: 991px)' })
+  const [bannerData,setBannerData] = useState ({
         title: details?.name || "Rahul Kumar",
         image: details?.bannerImage?.[1],
         description: details?.description
@@ -12,7 +14,7 @@ const Banner = (props) => {
     useEffect(()=>{
         setBannerData({
             title: details?.name,
-            image: details?.bannerImage?.[4],
+            image: isMobileOrTab?details?.mobileBanner:details?.bannerImage?.[4],
             description: details?.description
         })
     },[details])

@@ -123,4 +123,37 @@
     .profile_container {
         margin-right: 0;
     }
+    .p-confirm-dialog {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .p-confirm-dialog {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .p-confirm-dialog {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .p-confirm-dialog {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 354px) {
+    .p-confirm-dialog {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 249px) {
+    .p-confirm-dialog {
+        width: 90%;
+    }
 }

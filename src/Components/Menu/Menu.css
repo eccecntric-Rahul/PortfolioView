@@ -221,3 +221,20 @@
     text-decoration: none;
     color: var(--grey);
 }
+
+@media screen and (max-width: 360px) {
+   
+    .compact_profile_name{
+        font-size: 0.95rem;
+    }
+    
+    .compact_profile{
+        width: 3rem;
+        height: 3rem;
+    }
+    .switch_account{
+        font-size: 0.85rem;
+        text-decoration: none;
+        color: var(--grey);
+    }
+  }

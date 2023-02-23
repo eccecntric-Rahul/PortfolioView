@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import rLogo from '../../Assets/r-logo.jpg' 
 import "./Animation.css";
 
