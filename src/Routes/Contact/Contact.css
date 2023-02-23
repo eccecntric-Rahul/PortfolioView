@@ -178,7 +178,7 @@
        margin:0;
    }
    .like_section{
-       padding:1rem;
+       padding:1rem 0;
    }
    .profile_pic_section{
         flex-direction: column;
@@ -188,9 +188,7 @@
    .profile_pic_details{
        justify-content: center;
     }
-    .contact_column{
-        padding-right: 1.5rem;
-    }
+   
     .contact_content_container{
         justify-content: center;
     }

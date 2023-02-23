@@ -46,7 +46,7 @@
     cursor: pointer;
     color: #fff !important;;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     .animation_container{
         margin-right: 1rem;
     }
