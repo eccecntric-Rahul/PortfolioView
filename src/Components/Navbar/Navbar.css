@@ -184,6 +184,9 @@ align-items: center;
     height: 0.9rem;
     /* margin-right:2.3rem */
 }
+.compact_nav_button{
+    font-size: 1.2rem;
+}
   }
 
   @media screen and (max-width: 420px) {
