@@ -1,28 +1,25 @@
 
 .detail_container {
     position: relative;
-    overflow-y: scroll;
 }
 
 
 .detail_card_image {
-    height: 70vh;
-    width: 60vw;
+    height: 50vh;
+    width: 100vw;
     aspect-ratio: 30/17;
 }
 
 
 .detail_image_section {
     background-color: #fff;
-    padding-top: 5vh;
+    padding-top: 8rem;
     position: relative;
 }
 
 .detail_title_section {
-    padding-left: 2rem;
-    position: absolute;
-    top: 45vh;
-    left: 2rem;
+    padding-left: 1rem;
+    
 }
 
 
@@ -91,6 +88,7 @@
 .detail_description_container{
     display: flex;
     justify-content: space-between;
+    color: #fff;
 }
 
 .detail_quality{
@@ -142,6 +140,14 @@
     position: absolute;
     bottom:-2vh;
     width: 100%;
+}
+
+.detail_back_button{
+    color:#111;
+    font-size: 1.8rem;
+    position: absolute;
+    top:5rem;
+    left: 1rem;
 }
 
 

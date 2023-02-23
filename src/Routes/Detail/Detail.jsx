@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaHeart, FaRegThumbsUp, FaJsSquare, FaPlay, FaStar, FaAngleDown } from 'react-icons/fa'
+import { FaHeart, FaRegThumbsUp, FaJsSquare, FaPlay, FaStar,FaArrowLeft } from 'react-icons/fa'
 import { AiFillLike } from 'react-icons/ai'
 import { useNavigate,useLocation } from 'react-router-dom';
 import { ModalIconContainer } from '../../Components/Card';
@@ -7,6 +7,7 @@ import "./Detail.css";
 const Detail = (props) => {
     const {state}=useLocation();
     const { index, title, card } = state;
+    const navigate = useNavigate();
     return (
         <div>
             <div className="detail_contianer">
@@ -14,6 +15,7 @@ const Detail = (props) => {
                     <img src={card.image} className='detail_card_image' alt={title + '_' + index} />
                     <div className="detail_fade_bottom"></div>
                 </div>
+                <span onClick={()=>navigate(-1)}><FaArrowLeft className="detail_back_button"/></span>
                 <div className="detail_title_section">
                     <p className='detail_name'>{title?.split(' ')?.[0]}</p>
                     <div className="detail_icon_section">
