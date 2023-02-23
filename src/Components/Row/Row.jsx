@@ -3,10 +3,15 @@ import Card from '../Card';
 import {BsChevronLeft,BsChevronRight} from 'react-icons/bs'
 import './Row.css'
 import Skeleton from 'react-skeleton-loader';
+import { useMediaQuery } from 'react-responsive';
 const Row = (props) => {
     const { title ,cards,onlyPhoto} = props;
     const scrollRef=useRef(null);
     const [scrollOffset,setScrollOffset]=useState(0)
+    const isTab = useMediaQuery({ query: '(max-width: 991px)' })
+    const isMobile = useMediaQuery({ query: '(max-width: 580px)' })
+    const isSmallMobile = useMediaQuery({ query: '(max-width: 363px)' })
+
     const scrollPrev=()=>{
         if(scrollRef && scrollRef.current)
         scrollRef.current.scrollLeft -= 200
@@ -44,7 +49,7 @@ const Row = (props) => {
                     <>
                      {[...Array(10)]?.map((card, index) => (
                          <div className="card_skeleton" key={'skeleton_card'+index}>
-                             <Skeleton color="#212224"  width="18vw" height="16vh"/>
+                             <Skeleton color="#212224"  width={isSmallMobile?'70vw':isMobile?"47vw":isTab?'30vw':'15vw'} height="16vh"/>
                          </div>
                     ))}
                     </>

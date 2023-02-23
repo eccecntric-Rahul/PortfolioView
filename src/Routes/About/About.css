@@ -82,7 +82,9 @@
     background-color: rgb(244,244,244);
 }
 
-@media screen and (max-width: 580px) {
+
+
+@media screen and (max-width: 992px) {
     .want_to_container{
         font-size: 1.4rem;
         padding:1.5rem 1rem;
@@ -101,4 +103,24 @@
    .about_col2{
        display: none;
    }
+   .p-carousel-indicators{
+       right: 33vw;
+   }
+   .greeting_section{
+       left: 1rem;
+   }
+  }
+
+  @media screen and (max-width: 410px) {
+   .about_title{
+       width: fit-content;
+       font-size: xx-large;
+   }
+   .about_description{
+    font-size: large;
+    width: fit-content;
+}
+.p-carousel-indicators{
+    bottom: 1vh;
+}
   }
