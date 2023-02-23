@@ -95,7 +95,7 @@ const Contact = () => {
           </div>
         </div>
         <div className="like_section">
-        {!state?.reviewPosted?<>
+        {state?.reviewPosted?<>
           <div className="profile_pic_section">
           <img src={profilePic} alt="rahul-kumar-profile-pic" className="profile_pic" />
           <div className="profile_pic_details">
