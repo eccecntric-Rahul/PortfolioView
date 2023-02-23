@@ -79,7 +79,7 @@
 
    }
 
-   @media screen and (max-width: 340px) {
+   @media screen and (max-width: 440px) {
    
     .animation_container .p-inputtext{
         width: 35vw;

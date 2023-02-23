@@ -1,3 +1,12 @@
+.entry_logo_container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #131516;
+}
+
 .profile_main_container {
     display: flex;
     justify-content: center;
@@ -97,6 +106,12 @@
 }
 .p-confirm-dialog-icon{
     font-size: 1.67rem!important;
+}
+
+.entry_logo{
+    aspect-ratio: 455/376;
+    width: 50%;
+    height: auto;
 }
 
 @media screen and (max-width: 992px) {

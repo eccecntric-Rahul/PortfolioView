@@ -21,7 +21,7 @@ function Footer() {
                 <p className="footer_text_container"><Link to="/contact" className="footer_text_link">Contact Details</Link></p>
                 <p className="footer_text_container"><a href="https://drive.google.com/file/d/1s-P3vGWhQ3fWnXZGhYnpiqlbG3RO2c6A/preview" download className="footer_text_link">Download my resume !</a></p>
                 </div>
-                <div className="footer_row">
+                <div className="footer_row row_3" >
                 <p className="icon_container" ></p>
                 <p className="footer_text_container"><a href="https://google.com" target='_blank' rel="noreferrer" className="footer_text_link">Wanna hire me ?</a></p>
                 </div>

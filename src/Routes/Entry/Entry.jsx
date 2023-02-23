@@ -79,8 +79,8 @@ function Entry() {
             :
             <Loader />
         :
-        <div className="profile_main_container">
-          <img src={rLogo} alt="r-logo" />
+        <div className="entry_logo_container">
+          <img src={rLogo} alt="entry_logo" />
         </div>
       }
       <ConfirmDialog />
