@@ -35,7 +35,7 @@
 
 .contact_text_container{
     margin-top: 0.3rem;
-    margin-bottom: 2vh;
+    margin-bottom: 2rem;
     text-align: initial;
 }
 
@@ -178,7 +178,7 @@
        margin:0;
    }
    .like_section{
-       padding:1rem 0;
+       padding:1rem 1rem;
    }
    .profile_pic_section{
         flex-direction: column;
@@ -191,9 +191,10 @@
    
     .contact_content_container{
         justify-content: center;
+        font-size: medium;
     }
     .contact_header{
-        min-height: 22vh;
+        min-height: 27vh;
     }
     .textInput{
         width: 100%;
@@ -204,4 +205,17 @@
     .submit_button{
         width: 100%;
     }
+    .address{
+        margin-bottom: 3rem!important;
+    }
   }
+  @media screen and (max-width: 580px) {
+    
+    
+     .contact_content_container{
+         justify-content: center;
+         font-size: 0.9rem;
+     }
+     
+   }
+ 

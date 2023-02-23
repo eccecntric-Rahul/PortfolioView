@@ -81,7 +81,7 @@ const Contact = () => {
             <p className="icon_container" ></p>
             <p className="contact_text_container">Email :</p>
             <p className="contact_text_container">Mobile No. :</p>
-            <p className="contact_text_container">Address :</p>
+            <p className="contact_text_container address" >Address :</p>
             <p className="contact_text_container">LinkedIn :</p>
             <p className="contact_text_container">Github :</p>
           </div>
@@ -89,7 +89,7 @@ const Contact = () => {
             <p className="icon_container" ></p>
             <p className="contact_text_container"><a href="mailto:rk2655415@gmail.com" className='contact_text_link'>rk265541@gmail.com</a> </p>
             <p className="contact_text_container"><a href="tel:+919015709221" className='contact_text_link'>9015709221</a> </p>
-            <p className="contact_text_container"><span className="contact_text_link"> K-546 Gautam Vihar , Delhi-110053 </span></p>
+            <p className="contact_text_container" ><span className="contact_text_link"> K-546 Gautam Vihar , Delhi-110053 </span></p>
             <p className="contact_text_container"><a href="https://www.linkedin.com/in/rahul-kumar-821109187/" className='contact_text_link with_icon_text'>Rahul kumar <FaLinkedinIn /></a> </p>
             <p className="contact_text_container"><a href="https://github.com/eccecntric-Rahul" className='contact_text_link with_icon_text'>Eccentric-Rahul <FaGithub /></a> </p>
           </div>
