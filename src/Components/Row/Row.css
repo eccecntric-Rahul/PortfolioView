@@ -450,3 +450,48 @@
     transform: scale(1.25);
     z-index: 1;
 }
+
+@media screen and (max-width: 580px) {
+    .row{
+        margin-left: 1rem;
+    }
+    .row_title{
+        margin-bottom: 0.3rem;
+        font-size: 1rem;
+    }
+    
+    .card_section ,.photo_card_section{
+        padding-bottom:0;
+        margin-bottom: 0;
+        padding-top:0;
+        margin-top: 0;
+        margin-left: 0;
+        padding-left:0;
+    }
+    .card {
+        width: 45vw;
+    }
+    .dummy_card {
+        width: 45vw;
+    }
+    
+    
+    .card_section .card:hover {
+        transform: none;
+        position: static;
+        top: none;
+    }
+    
+    .card:hover ~.dummy_card {
+        display: none!important;
+    }
+    .left_arrow_container{
+        display: none;
+    }
+    .right_arrow_container{
+        display: none;
+    }
+    .card:hover .details_section {
+        display: none;
+    }
+}

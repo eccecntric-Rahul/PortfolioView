@@ -103,3 +103,24 @@
     margin-right: 5px;
 }
 
+
+
+@media screen and (max-width: 580px) {
+    .strip{
+       bottom:20vh;
+       right:0rem;
+       overflow: hidden;
+       color:#fff;
+       border-left: #DCDCDC solid 3px;
+    }
+    .container{
+        top:0;
+    }
+    .content_container{
+        margin-left: 1rem;
+       
+    }
+    .strip:hover{
+        transform: none;
+    }
+}

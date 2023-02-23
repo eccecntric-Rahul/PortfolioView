@@ -13,6 +13,7 @@ import "primereact/resources/primereact.min.css";                  //core css
 import "primeicons/primeicons.css";    
 import SearchRoute from './Routes/Search/SearchRoute';
 import Detail from './Routes/Detail/Detail';
+
 function App() {
   const location = useLocation();
   return (

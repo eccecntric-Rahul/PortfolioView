@@ -3,3 +3,12 @@
     position: relative;
     top:-10vh;
 }
+
+@media screen and (max-width: 580px) {
+    .container{
+        min-height: 80vh;
+        position: relative;
+        top:0;
+    }
+    
+}
